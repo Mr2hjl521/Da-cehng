@@ -1,0 +1,185 @@
+<van-nav-bar
+  title="大成优+"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/>
+<view>
+  <view>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="待确认" >
+        <!-- 订单一类型区域 -->
+        <view class="boxone" wx:for="{{ getlist }}" wx:key="index" wx:if="{{item.oStatus == 0|| item.oStatus ==6}}" data-id='{{item.id}}' bindtap="goinfo" data-style="{{item.oStyle}}">
+          <view class="status">
+          <view class="statuskey">
+              商铺名称{{item.aShopName}}
+            </view>
+            <view class="statuskey">
+              {{item.newstatus}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num">
+              共{{item.amount}}件
+            </view>
+          </view>
+          <view class="FZ" wx:if="{{item.oStyle == 1}}">封装费:{{item.pakingFee}}</view>
+          <view class="operate">
+            <text style="margin-left:10%;">折后:¥{{item.oSpecialPrice}}</text>
+            <!-- <text style="margin-left:15rpx; color:#fc4240">运费:{{item.oStatus==0?'待确定':'¥'+item.courierFee}}</text> -->
+            <text style="margin-left:18rpx;">运费:{{item.courierFee==null?'待确定':'¥'+item.courierFee}}</text>
+            <van-button color="#FF0000" plain size="small" class="btnone" custom-class="addbutton" round type="info" data-id='{{item.id}}' catchtap="refuse">取消订单</van-button>
+            <van-button color="#00FF00" plain size="small" custom-class="addbuttoner" class="btntwo" round type="info" data-id='{{item.id}}' catchtap="sure"  wx:if="{{item.oStatus == 6}}">确认下单</van-button>
+          </view>
+          
+        </view>
+        <!-- 订单一类型区域 -->
+      </van-tab>
+      <van-tab title="待收货">
+        <!-- 订单二类型区域 -->
+        <view class="boxone" wx:for="{{ getlist }}" wx:key="index" wx:if="{{item.oStatus == 1}}" data-id='{{item.id}}' bindtap="goinfo" data-style="{{item.oStyle}}">
+          <view class="status">
+            <view class="statuskey">
+              商铺名称{{item.aShopName}}
+            </view>
+            <view class="statusLeft">
+              {{item.newstatus}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num">
+              共{{item.amount}}件
+            </view>
+          </view>
+          <view class="FZ" wx:if="{{item.oStyle == 1}}">封装费:{{item.pakingFee}}</view>
+          <view class="operate">
+            <text style="margin-left:10%;">折后:¥{{item.oSpecialPrice}}</text>
+            <text style="margin-left:30rpx;">运费:{{item.oStatus==0?'待确定':'¥'+item.courierFee}}</text>
+            <van-button color="#FF0000" plain size="small" class="btnone" round type="info" custom-class="addbutton" data-id='{{item.id}}' catchtap="refuse">取消订单</van-button>
+            <van-button color="#00FF00" plain size="small" class="btntwo" custom-class="addbuttoner" round type="info" data-id='{{item.id}}' catchtap="delivery">确认收货</van-button>
+          </view>
+        </view>
+        <!-- 订单二类型区域 -->
+      </van-tab>
+      <van-tab title="待自提">
+        <!-- 订单三类型区域 -->
+        <view class="boxone" wx:for="{{ getlist }}" wx:key="index" wx:if="{{item.oStatus == 2 }}" data-id='{{item.id}}' bindtap="goinfo"
+        data-name="{{item.oStyle}}" data-style="{{item.oStyle}}">
+          <view class="status">
+            <view class="addresskey">
+              自提点:{{item.aShopName}}
+            </view>
+            <view class="statuskey">
+              {{item.status}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num">
+              共{{item.amount}}件
+            </view>
+          </view>
+            <view class="FZ" wx:if="{{item.oStyle == 1}}">封装费:{{item.pakingFee}}</view>
+          <view class="operate">
+            <text style="margin-left:10%;">折后:¥{{item.oSpecialPrice}}</text>
+            <van-button color="#FF0000" plain size="small" class="btnone" round type="info" custom-class="addbutton" data-id='{{item.id}}' catchtap="refuse">取消订单</van-button>
+            <van-button color="#00FF00" plain size="small" class="btntwo" custom-class="addbuttoner" round type="info" data-id='{{item.id}}' catchtap="myself">已自提</van-button>
+          </view>
+        </view>
+        <!-- 订单三类型区域 -->
+      </van-tab>
+      <van-tab title="已完成">
+        <!-- 完成类型区域 -->
+        <view class="boxone" wx:for="{{ getlist }}" wx:key="index" wx:if="{{item.oStatus == 3||item.oStatus == 7 }}" data-id='{{item.id}}' bindtap="goinfo" data-style="{{item.oStyle}}">
+          <view class="status">
+             <view class="statuskey">
+              商铺名称{{item.aShopName}}
+            </view>
+            <view class="statuskey">
+              {{item.newstatus}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num">
+              共{{item.amount}}件
+            </view>
+          </view>
+            <view class="FZ" wx:if="{{item.oStyle == 1}}">封装费:{{item.pakingFee}}</view>
+          <view class="operate">
+            <text style="margin-left:10%;">折后:¥{{item.oSpecialPrice}}</text>
+            <text wx:if="{{item.oType == 0}}" style="margin-left:30rpx;">运费{{item.courierFee==null?'':'¥'+item.courierFee}}</text>
+            
+            <van-button color="#00FF00" plain size="small"  round type="info" data-id='{{item.id}}' catchtap="evaluate" wx:if="{{item.oStatus == 3}}" custom-class="{{item.oType == 0 ?'addbuttonC' : 'addbuttonB'}}">前往评价</van-button>
+          </view>
+        </view>
+        <!-- 完成类型区域 -->
+      </van-tab>
+      <van-tab title="已取消">
+        <!-- 取消类型区域 -->
+        <view class="boxone" wx:for="{{ getlist }}" wx:key="index" wx:if="{{item.oStatus == 5 }}" data-id='{{item.id}}' bindtap="goinfo" data-style="{{item.oStyle}}">
+          <view class="status">
+             <view class="statuskey">
+              商铺名称{{item.aShopName}}
+            </view>
+            <view class="statuskey">
+              {{item.newstatus}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num">
+              共{{item.amount}}件
+            </view>
+          </view>
+        <view class="FZ" wx:if="{{item.oStyle == 1}}">封装费:{{item.pakingFee}}</view>
+          <view class="operate">
+            <text style="margin-left:10%;">折后:¥{{item.oSpecialPrice}}</text>
+            <text style="margin-left:30rpx;">运费{{item.courierFee==null?'':'¥'+item.courierFee}}</text>
+            <van-button color="#00FF00" plain size="small" class="btntwo" round type="info" data-id='{{item.id}}' catchtap="dele">删除记录</van-button>
+          </view>
+        </view>
+        <!-- 取消类型区域 -->
+      </van-tab>
+    </van-tabs>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

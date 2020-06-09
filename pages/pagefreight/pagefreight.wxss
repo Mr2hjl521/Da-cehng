@@ -1,0 +1,207 @@
+page {
+  background:#eeeeee;
+  font-size: 28rpx;
+}
+.title {
+  height: 100rpx;
+  width: 90%;
+  margin: 5%;
+}
+
+.typeone {
+  height: 100%;
+  width: 90%;
+  margin: 5%;
+  background: white;
+  border-radius: 20rpx;
+}
+
+.typetwo {
+  height: 100%;
+  width: 90%;
+  margin: 5%;
+  background: white;
+  border-radius: 20rpx;
+}
+
+.txt {
+  height: 50rpx;
+  width: 80%;
+  margin: 2% 10%;
+  padding: 20rpx 0;
+  display: block;
+}
+.txt1 {
+height: 50rpx;
+  width: 80%;
+  margin: 2% 10%;
+  padding: 20rpx 0;
+  display: flex
+}
+.txt1 label:first-child{
+  width: 150rpx;
+  height: 50rpx;
+}
+
+
+
+.boxlist {
+  margin: 10rpx;
+  height: 185rpx;
+  position: relative;
+}
+
+.boxlist_img {
+  position: absolute;
+  left: 8%;
+  top: 0;
+  height: 150rpx;
+  width: 150rpx;
+  padding: 15rpx;
+  background: #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_img image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_txt {
+  position: absolute;
+  left: 40%;
+}
+
+.boxlist_num {
+  position: absolute;
+  line-height: 150rpx;
+  left: 80%;
+  top: 0;
+}
+
+.txta {
+  line-height: 75rpx;
+  font-weight: bold;
+}
+
+.box {
+  background: white;
+  margin: 5%;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.message {
+  width: 80%;
+  margin: 2% 10%;
+  height: 50rpx;
+  position: relative;
+  line-height: 50rpx;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  left: 180rpx;
+  height: 60rpx;
+  width: 400rpx;
+}
+.special{
+  left: 505rpx;
+}
+.specialmessage {
+  width: 80%;
+  margin: 0 10%;
+  height: 60rpx;
+  position: relative;
+  line-height: 60rpx;
+  
+}
+
+.bto {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.upmessage {
+  width: 90%;
+  margin: 5%;
+  background: white;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.mid {
+  width: 200rpx;
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx auto;
+  margin-top: 100rpx;
+}
+
+.time {
+  width: 80%;
+  margin: 2% 10%;
+  position: relative;
+  border-bottom:  1px solid gainsboro;
+  line-height: 60rpx;
+}
+.icon-er{
+  width: 85%;
+  height: 70rpx;
+ line-height: 70rpx;
+  margin-left: 10.5%;
+}
+.van-field__input{
+    margin-top:20rpx !important;
+}
+.van-cell{
+   padding:12rpx 0rpx !important;
+}
+.addbutton{
+  border: 2rpx solid #a0a0a0 !important;
+  color: #828282 !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative !important;
+  left: 20rpx !important;
+  top: 40rpx !important;
+}
+.addbuttoner{
+  border: none !important;
+  background: #f63e22 !important;
+  color: white !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative;
+  left: 20rpx !important;
+  top: 40rpx !important;
+}
+.addbuttonerA{
+  background: white !important;
+  color: black !important;
+  width: 154rpx !important;
+  height: 40rpx !important;
+  position: relative;
+  left: 510rpx !important;
+  top: -30rpx !important;
+  font-size: 23rpx !important;
+  border: 2rpx solid black !important;
+}
+
+.nullWhite {
+  color: white
+}
+.nullBlack {
+  color:  black
+}

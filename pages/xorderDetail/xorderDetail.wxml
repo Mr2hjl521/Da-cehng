@@ -1,0 +1,73 @@
+<view class="page">
+    <view class="top" wx:if="{{addtype!=1&&addtype!=2}}">
+        <view class="a">{{orderList.newstatus}}</view>
+        <view class="b">
+          <button style="border:1rpx black solid" catchtap="refuse" data-id='{{orderList.id}}' wx:if="{{orderList.oStatus != 5 && orderList.oStatus != 7 &&orderList.oStatus != 4&&orderList.oStatus !=3}}">取消订单</button>
+          <button style="background-color:#f73f22;color:white" data-id='{{orderList.id}}' catchtap="sure" wx:if="{{orderList.oStatus == 6}}" >确定下单</button>
+          <button style="background-color:#f73f22;color:white" data-id='{{orderList.id}}' catchtap="delivery" wx:if="{{orderList.oStatus == 1}}" >确认收货</button>
+          <button style="background-color:#f73f22;color:white"  data-id='{{orderList.id}}'  catchtap="myself" wx:if="{{orderList.oStatus == 2}}">已自提</button>
+        </view>
+    </view>
+
+    <!--送货-->
+    <view wx:if="{{orderList.oType == 0}}">
+
+    <view class="address" >
+        <view>收货人:{{orderList.uhAddress.userName}} <label>{{orderList.uhAddress.phone}}</label></view>
+        <view>收货地址:{{orderList.uhAddress.address}}</view>
+    </view>
+    <van-cell-group>
+           <van-cell title="店铺名称" value="{{orderList.agent.name}}" />
+           <van-cell title="送货时间" value="{{orderList.agent.deliveryTime}}" />
+           <van-cell title="配送范围" value="{{orderList.agent.range}}" />           
+    </van-cell-group>
+        </view>
+    <!--自提-->
+    <view class="ztAddress"  wx:if="{{orderList.oType == 1}}">
+      <view class="ztleft">自提点:{{orderList.agent.address}}</view>
+      <view class="zeright">
+        <button bindtap="cellPhone" wx:if="{{addtype!=1}}">联系门店</button>
+      </view>
+      <van-cell-group>
+           <van-cell title="店铺名称" value="{{orderList.agent.name}}" />
+           <van-cell title="自提时间" value="{{orderList.agent.pickupTime}}" /> 
+    </van-cell-group>
+    </view> 
+
+    <!--循环第几组-->
+    <view wx:for="{{orderList.fightUserOrderBos}}" wx:key="index">
+    <text>第{{index+1}}组</text>
+          <!--循环每个组中有几个列表-->
+          <view wx:for="{{item.fightProductBos}}" wx:key="opId">
+            <van-card num="{{item.productAmount}}"
+               price="2.00" desc="{{item.pDesc}}" title="{{item.productName}}" thumb="{{item.productImage}}" />
+          </view>
+    </view> 
+
+    <!---->
+       <van-cell-group>
+          <view class="view-icon">商品金额<label style="float:right;margin-left:15rpx;">¥{{orderList.oSpecialPrice}}</label> <label style="text-decoration:line-through;float:right">¥{{orderList.oPrice}}</label>  </view>
+           <van-cell title="运费" value="{{orderList.courierFee}}"  wx:if="{{orderList.oType == 0&&addtype!=1}}"/> 
+           <van-cell-group  wx:if="{{addtype==1 && orderList.oType==0}}">
+              <van-field
+                value="{{ orderList.courierFee }}"
+                label="运费"
+                placeholder="请输入运费"
+                bind:change="onChangeA"
+              />  
+            </van-cell-group>        
+           <van-cell title="用户联系方式" value="{{orderList.userPhone}}" />           
+           <van-cell title="封装份数" value="{{orderList.pakingFee/2}}" />           
+           <van-cell title="封装金额" value="{{orderList.pakingFee}}" />           
+           <van-cell title="合计" value="{{orderList.pakingFee+orderList.courierFee+orderList.oSpecialPrice}}" />     
+           <van-cell title="留言" value="{{orderList.leaveMessage}}" />           
+    </van-cell-group>
+    <view class="time">订单编号:<label>{{orderList.orderCode}}</label></view>
+    <view class="time"  wx:if="{{orderList.oType == 1}}">自提时间: <label>{{orderList.agent.pickupTime}}</label></view>
+    <view class="time" wx:if="{{orderList.oType == 0}}">送货时间: <label>{{orderList.agent.deliveryTime}}</label></view>
+    <view class="time">订单生成时间:{{orderList.createTime}}</view>
+
+     <van-button custom-class="addbuttoner"  wx:if="{{addtype==1 && orderList.oType==0}}" catchtap="setrefuse">设置运费</van-button>
+    <van-toast id="van-toast" />
+</view>
+

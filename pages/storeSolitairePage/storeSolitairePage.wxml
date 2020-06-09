@@ -1,0 +1,22 @@
+<view class="page">
+<!--头部-->
+<view class="top">
+    <view class="yuan">
+       <van-image
+  width="80"
+  height="80"
+    round
+  src="{{headImage}}"
+/>
+    </view>
+    <view class="myText" style="mag">我的接龙</view>
+</view> 
+<!--商品列表-->
+<view class="list" wx:for="{{xOrderList}}" wx:key='index' bindtap="addserve" data-orderId="{{item.orderId}}" data-index="{{index}}">
+   <view>接龙商品种类：<text>{{item.fightProductNumber}}种</text> </view>
+   <view>接龙人数：<text>{{item.fightNumber}}人</text></view>
+   <view>有效时间：<text>{{item.creatTime}}~{{item.fightEndTime}}</text></view>
+   <view>{{item.newstatus}}</view> 
+</view>
+<!---->
+</view>

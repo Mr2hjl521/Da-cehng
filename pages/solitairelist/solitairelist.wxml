@@ -1,0 +1,132 @@
+<van-nav-bar
+  title="商品接龙页"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+<view class="box">
+   <view class="header">
+      <view class="hecher" wx:for="{{list.orderProductDtoList}}"  wx:key="index">
+         <view class="hearder-view">
+            <van-image
+                width="69"
+                height="69"
+                src="{{item.pImageUrl}}"
+              />
+          </view>
+          <view class="adder-viedw">
+              <view style="color:black">{{item.pName}}</view>
+              <!-- <view class="err-view">{{item.pDesc}}</view> -->
+              <view style="margin-top:34rpx"><text style="color:red;margin-right:20rpx">接龙价：{{item.uhPrice}}</text> <text>原价：{{item.pPrice}}</text></view>
+          </view>
+      </view>
+   </view>
+   <view class="center">
+   
+        <text style="margin-left:30rpx">接龙剩余时间还剩：</text>
+        <van-count-down
+          style="float:right;margin-right:90rpx"
+          use-slot
+          time="{{ time }}"
+          bind:change="onChange"
+          
+        >
+          <text class="item">{{ timeData.days }}</text>天
+          <text class="item">{{ timeData.hours }}</text>:
+          <text class="item">{{ timeData.minutes }}</text>:
+          <text class="item">{{ timeData.seconds }}</text>
+        </van-count-down>
+
+   </view>
+   <view class="button-viweer">
+     <van-button type="info" custom-class="button-viweerA" round open-type="share">邀请好友</van-button>
+     <van-button type="info" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" custom-class="button-viweerB" round>帮自己/好友购买</van-button>
+   </view>
+   <view class="footer-view">
+      <view class="footer-er">
+          <text style="margin-left:30rpx;float:left">接龙列表</text>
+      </view>
+      <view class="bottom" wx:for="{{list.fightUserOrderBos}}"  wx:key="index">
+          <view class="bottom-viewA">
+              <text>{{index+1}}</text>
+          </view>
+          <view class="bottom-viewB">
+              <view>
+                 <van-image
+                    round
+                    width="50"
+                    height="50"
+                    src="{{item.userAvatarUrl}}"
+                  />
+                  <text class="adder-text">{{item.userNickName}}</text>
+                  <text class="adder-textA" >{{item.uPhone}}</text>
+                  <view class="adder-view-icon"  wx:for="{{item.fightProductBos}}" wx:for-item="additem"  wx:key="index">
+                      <text>{{additem.productName}}</text>
+                       <text class="text-icon-view">￥{{additem.uhPrice}}</text>
+                       <text class="text-icon-view">×{{additem.productAmount}}</text>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="list-view"></view>
+   </view>
+   <view class="adder-view">
+       <!-- <view class="ivoner" style="width:40%">
+           <view style="margin-top:10rpx"><text>以接龙人数:</text><text>8人</text></view>
+           <view><text>总价:</text><text>￥108</text></view>
+       </view> -->
+       <!-- <view class="addbutin" style="width:60%"> -->
+          <!-- 按钮 -->
+           <!-- <view style="backgroud:#bababa">取消订单</view>
+           <view class="adders">提交订单</view>
+       </view> -->
+       <view style="width:40%;backgroud:#f2f2f2">
+           总价：
+           <text style="color:red">￥{{allmoney}}</text>
+       </view>
+       <view wx:if="{{addvalue==1&& addId!=0}}" style="background:#fe4646;color:white;width:60%" bindtap="addcancel">
+           取消订单
+       </view>
+       <!-- 提交订单 -->
+        <view wx:if="{{addvalue==0&&addId!=0}}" style="background:#fe4646;color:white;width:60%" bindtap="addcancelA">
+          {{addTost}}
+       </view>
+   </view>
+    <van-overlay show="{{ show }}" bind:click="onClickHide">
+      <view class="add-view" bindtap="addwrong">
+           <van-icon name="cross" />
+        </view>
+      <view class="wrapper">
+        <view style="margin-top:60rpx">
+          <van-cell-group>
+              <van-field
+                type="number"
+                value="{{ value }}"
+                placeholder="请输入手机号"
+                border="{{ false }}"
+                bind:change="onChangeC"
+              />
+          </van-cell-group>
+        </view>
+        <view wx:for="{{addlist}}" wx:for-item="item"  wx:key="index">
+           <van-cell-group>
+              <van-field
+                data-id="{{index}}"
+                type="number"
+                value="{{ item.amount }}"
+                placeholder="{{item.pName}}"
+                border="{{ false }}"
+                bind:change="onChangeA"
+              />
+          </van-cell-group>
+        </view>
+        <view style="color:red;font-size:25rpx;margin:30rpx 10%">无需产品不需要填写</view>
+        <view class="adder-button" bindtap="addserveA">
+            参与接龙
+        </view>
+       
+      </view>
+    </van-overlay>
+    <van-toast id="van-toast" />
+    <van-dialog id="van-dialog" />
+</view>

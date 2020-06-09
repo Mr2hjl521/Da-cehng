@@ -1,0 +1,43 @@
+<!-- 订单信息模块 -->
+<view class="box">
+  <view class="boxlist" wx:for="{{orderDetail.productOpBos}}" wx:key="index">
+    <view class="boxlist_img">
+      <image src="{{item.imageUrl}}"></image>
+    </view>
+    <view class="boxlist_txt">
+      <view class="txt">{{item.name}}</view>
+
+      <view class="txt">¥{{item.price}}</view>
+    </view>
+    <view class="boxlist_num">
+      共{{item.amount}}件
+    </view>
+  </view>
+  <view class="message">
+    <view class="left">商品金额</view>
+    <view class="right">¥{{orderDetail.oPrice}}</view>
+  </view>
+  <view class="message">
+    <view class="left">手机号</view>
+    <view class="right">{{orderDetail.uhAddress.phone}}</view>
+  </view>
+  <view class="specialmessage">
+    <view class="top">卖家留言:</view>
+    <view class="bto">{{orderDetail.leaveMessage}}</view>
+  </view>
+</view>
+<!-- 评价信息模块 -->
+<view class="upmessage">
+  <view class="message" style="margin-top:50rpx;">
+    商品质量：<van-rate value="{{ valuefrist }}" bind:change="onChangefrist"  />
+  </view>
+  <view class="message">
+    服务质量：<van-rate value="{{ valuesecond }}" bind:change="onChangesecond" />
+  </view>
+  <view class="message">
+    物流速度：<van-rate value="{{ valuethird }}" bind:change="onChangethird" />
+  </view>
+  <view class="mid">
+   <van-button color="#FF6600" catchtap="evaluate" size="small">提交评价</van-button>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view>
+    <van-nav-bar
+  title="订单提交成功"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/>
+      <view class="topIcon">
+      <van-icon name="checked"  size="200rpx"  color="#4dcf62"/>
+      </view>
+      <view class="ordertext">您已提交订单 请等待商户确定</view>
+      <button class="orderCenter" bindtap="goOrderCenter">订单中心</button>
+</view>

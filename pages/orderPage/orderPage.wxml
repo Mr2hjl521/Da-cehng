@@ -1,0 +1,108 @@
+<!--logs.wxml-->
+<view class="top">
+<van-nav-bar  left-text="返回" left-arrow bind:click-left='goback' >
+  <van-icon name="search" slot="right" />
+</van-nav-bar>
+</view>
+
+<view class="apg">
+
+  <view class="topBtn">
+    <button  bindtap="toShop"  class="{{nvg==1?'nvg':'addnvg'}}" wx:if="{{pickup==1}}">到店自提</button>
+    <button bindtap="toCity"  class="{{nvg==0?'nvg':'addnvg'}}" wx:if="{{delivery==1}}">同城配送</button>
+  </view>
+
+    <view class="address" wx:if="{{nvg==1}}" >
+      <view class="addComapny">自提点:<label>{{companyAdress.shopName}}</label></view>
+      <view class="addHome">{{companyAdress.address}}</view>
+      <view class="addImg" bindtap="cellPhone">联系门店</view>
+  </view>
+
+    <view class="address2"  wx:if="{{nvg==0}}">
+      
+        <view class="b" wx:if="{{address}}">
+          <view class="bLeft">
+            <view>收货人:{{name}}<label>{{newphone}}</label></view>
+            <view><text class="viee">收货地址:{{address}}</text></view>
+          </view>
+          <view class="bRight">
+            <button bindtap="goAddress">></button>
+          </view>
+        </view>
+        <view class="a" wx:else ><button class="selectAddress" bindtap="goAddress">请选择收货地址></button></view>
+    </view>
+
+  <view class="alnTime" wx:if="{{nvg == 1}}">
+      <view>自提时间</view>
+      <view>{{pickupTime}}</view>
+  </view> 
+   <view class="goTime" wx:if="{{nvg == 0}}">
+      <view>送货时间<label>{{pickupTimeA}}</label></view>
+      <view>配送范围<label>{{range}}</label></view>
+  </view>
+  <!--原来的-->
+
+  <view wx:if="{{xshow != 1}}">
+
+  <view>
+    <view  class="a" wx:for="{{ orderList }}" wx:key="id">
+    <van-card num="{{item.num}}" price="{{item.price}}"desc="{{item.desc}}" title="{{item.name}}"    
+    thumb="{{item.url}}"/>
+  </view>
+  </view>
+  <view class="allPrice">
+      <view>商品总额:<label>¥{{allNum}}</label></view>
+      <view>折扣金额:<label>¥{{discountPrice}}</label></view>
+      <view wx:if="{{nvg==1}}">您的手机号<label>{{phone}}</label></view>
+      <view wx:if="{{nvg == 0}}">商家的联系方式<label bindtap="callPhone">{{storePhone}}</label></view>
+  </view>
+  <view class="freight" wx:if="{{nvg==0}}">运费<label style="color:red">提交商家后待商家确定</label>
+  </view>
+  <view class="remark">
+      <view wx:if="{{nvg==1}}">买家留言</view>
+      <view wx:if="{{nvg==0}}">买家留言</view> 
+      <input type="text" bindblur="satText" placeholder="有什么想说的可以填写这里" ></input>
+  </view>
+  <view class="bot">
+      <view style="background:white;">折后金额:<label class="money">¥{{reallyPrice}}</label></view>
+      <button bind:tap="submitOrder" class="button-icon">提交订单</button>
+  </view>
+
+  </view>
+  <!--订单接龙-->
+  <view wx:if="{{xshow == 1}}">
+
+  <view wx:for="{{xorderlist.fightUserOrderBos}}" wx:key="index">
+  <!--循环几组-->
+    <text>第{{index+1}}组</text>
+        <view class="xorderList" wx:for="{{item.fightProductBos}}" wx:key="opId" >
+               <van-card num="{{item.productAmount}}"
+               price="{{item.specialPrice}}" desc="{{item.pDesc}}" title="{{item.productName}}" thumb="{{item.productImage}}" />
+        </view>
+
+  </view> 
+
+  <van-cell-group class="grop">
+        
+          <view>商品金额:<label style="text-decoration:line-through" class="x">{{numA}}</label><label class="y">{{xshifu}}</label></view>
+          <van-cell title="折扣金额:" value="{{xzhekou}}" />
+          <van-cell title="封装份数:" value="{{xorderlist.fightUserOrderBos.length}}" />
+          <van-cell title="封装金额:" value="{{xorderlist.fightUserOrderBos.length*2}}" />
+          <van-cell title="商家联系方式:" value="{{xorderlist.agent.phone}}" />
+          <!-- <van-cell title="运费:" value="{{xorderlist.courierFee}}" /> -->
+        
+   <van-field value="{{ xleaveMessage }}" label="买家留言"   icon="question-o" placeholder="有什么想说的可以填写在这里"
+                bind:change="onChangeA"/>        
+  </van-cell-group>
+  
+  <view class="xbottom">
+    <view>实付金额:<label>¥{{zzz}}</label></view>
+    <view><button bindtap="xSubmitorder">提交订单</button></view>
+  </view> 
+
+  </view>
+
+  <!--最外层-->
+  </view>
+ <!-- 客服 -->
+

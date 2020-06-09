@@ -1,0 +1,49 @@
+/* pages/shopowner/shopowner.wxss */
+.con-tent-viewthree{
+  width:257rpx;
+  height:320rpx;
+  background:#f2f2f2;
+  border-radius:5px;
+  overflow: hidden;
+  margin-left: 78rpx;
+  margin-top: 30rpx;
+  float: left;
+  
+}
+.con-tent-viewA{
+  width:95%;
+  margin-left: 5%;
+  height:30rpx;
+  font-size:25rpx;
+  font-weight:normal;
+  color:rgba(48,51,60,1);
+  line-height:30rpx;
+  overflow: hidden;
+}
+.con-tent-viewB{
+  width:95%;
+  margin-left: 5%;
+  height:30rpx;
+  font-size:24rpx;
+  font-weight:normal;
+ color:rgba(48,51,60,1);
+  line-height:30rpx;
+  overflow: hidden;
+}
+.con-tent-viewC{
+  width:95%;
+  margin-left: 2.5%;
+  height:50rpx;
+  font-size:24rpx;
+  font-weight:normal;
+   color:rgba(48,51,60,1);
+  line-height:50rpx;
+  overflow: hidden;
+}
+.con-tent-viewC>text{
+  float: right;
+  font-size: 29rpx;
+}
+.van-search__field{
+  width: 600rpx !important;
+}

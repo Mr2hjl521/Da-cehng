@@ -1,0 +1,139 @@
+page {
+  background: #eeeeee;
+}
+
+.boxone {
+  border-radius: 20rpx;
+  height: 100%;
+  width: 90%;
+  margin: 5%;
+  background: white;
+  overflow: hidden;
+}
+
+.status {
+  margin: 20rpx 0;
+  height: 60rpx;
+  display: flex;
+}
+.statusLeft {
+  display: inline-block;
+  float: left;
+  font-size: 28rpx;
+}
+.statuskey {
+  font-size: 26rpx;
+  display: inline-block;
+  float: right;
+  /* margin-right: 5%; */
+}
+
+.boxlist {
+  padding: 10rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.boxlist_img {
+  position: absolute;
+  left: 10%;
+  top: 0;
+  height: 150rpx;
+  width: 150rpx;
+  padding: 15rpx;
+  background: #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_img image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_txt {
+  position: absolute;
+  left: 40%;
+  font-size: 26rpx;
+}
+
+.boxlist_num{
+  position: absolute;
+  line-height: 150rpx;
+  left: 80%;
+  top: 0;
+}
+.txt {
+  line-height: 75rpx;
+}
+.operate{
+  font-size: 24rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+} 
+.btnone{
+  position: absolute;
+  top: -10rpx;
+  right: 30%;
+}
+.btntwo{
+  position: absolute;
+  top: 0;
+  top: -10rpx;
+  right: 40rpx;
+}
+.addresskey{
+  margin-left: 10%;
+  float: left;
+  font-size: 24rpx;
+}
+.addbutton{
+  border: 2rpx solid #a0a0a0 !important;
+  color: #828282 !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative;
+  left: 30rpx;
+}
+.addbuttoner{
+  border: none !important;
+  background: #f63e22 !important;
+  color: white !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative;
+  left: 30rpx;
+}
+.addbuttonB{
+  border: none !important;
+  background: #f63e22 !important;
+  color: white !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative;
+  left: 270rpx !important;
+  /* top: 40rpx !important; */
+}
+.van-nav-bar__text{
+  color:white !important;
+}
+.van-icon{
+  color:black !important;
+}
+.addbuttonC{
+  border: none !important;
+  background: #f63e22 !important;
+  color: white !important;
+  width: 150rpx !important;
+  height: 50rpx !important;
+  position: relative;
+  left: 160rpx !important;
+  /* top: 40rpx !important; */
+}
+.FZ {
+  margin-left: 546rpx;
+  font-size: 24rpx;
+  margin-bottom: 14rpx;
+}

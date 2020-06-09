@@ -1,0 +1,34 @@
+<view class="box">
+   <view class="box-view">
+     <van-cell-group>
+      <van-field
+       input-class="addserve-image"
+        value="{{ username }}"
+        icon="search"
+        placeholder="请输入社区名称"
+        bind:click-icon="onClickIcon"
+        bind:change="onChange"
+      />
+      </van-cell-group>
+   </view>
+   <view class="agentBox" wx:for="{{ agentsList }}" wx:key="index">
+    <view class="aLeft" bindtap="toDetails" id="{{ item.id }}">
+      <view class="agentImg">
+        <image src="{{ item.shopImage }}"></image>
+      </view>
+      <view class="agentInfo">
+        <view class="name">{{ item.shopName }}</view>
+        <view class="phone">联系人电话：{{ item.phone }}</view>
+        <view class="adress">{{ item.address }}</view>
+      </view>
+    </view>
+    <view class="aRight" bindtap="showPopup" id="{{ item.id }}">
+      <view class="smallFont2">3.12km</view>    
+      <view class="erweima">
+        <image src="{{ item.qrCodeUrl }}"></image>
+      </view>
+      <view class="smallFont2">微信二维码</view>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

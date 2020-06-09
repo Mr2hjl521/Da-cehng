@@ -1,0 +1,57 @@
+<view class="box">
+   <view class="header" wx:if="{{list.length==0}}">
+      <view class="imager-view" >
+         <van-image
+            round
+            width="130"
+            height="130"
+            src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/07/12/6c1703685a3861c538f3d5684a78101.jpg"
+          />
+      </view>
+      <van-button round wx:if="{{status==null}}" type="danger" bindtap="apply">成为合伙人 即可下单</van-button>
+      <van-button round wx:if="{{status==0||status==1||status==2}}" type="danger" bindtap="addhome">去首页逛逛</van-button>
+      <view style="margin:30rpx 0;font-size:28rpx">优惠多多 惊喜连连</view>   
+   </view>
+  <!-- 这里是购物车有商品的 ---------------------------------------------------------------------------------------- -->
+   <view class="content" wx:if="{{list.length>0}}">
+      <view class="delete-view">
+         <text bindtap="deletes">删除</text>
+      </view>
+      <view class="content-view" wx:for="{{list}}" wx:key="index">
+         <view style="margin:12% 10rpx">
+          <van-checkbox-group value="{{ result }}" bind:change="onChangeB">
+              <van-checkbox checked-color="red" name="{{item.id}}"></van-checkbox>
+          </van-checkbox-group>
+         </view>
+         <view style="margin:5% 5rpx">
+            <van-image
+              width="70"
+              height="70"
+              src="{{item.productImage}}"
+            />
+         </view>
+         <view style="margin:8% 20rpx;line-height:50rpx">
+            <view style="font-size:14px;height: 60rpx; overflow:hidden;width:260rpx">{{item.productName}}</view>
+            <view style="color:red">￥{{item.specialPrice}}</view>
+         </view>
+         <view  style="margin:17% 0rpx;width:23%;margin-left:50rpx">
+            <van-stepper value="{{ item.amount }}" input-width="46rpx" button-size="46rpx" data-id="{{index}}" bind:change="onChangeA" bind:blur='updataNumber' />
+         </view>
+      </view>
+      <view class="adderser"></view>
+   </view>
+   <view class="footer" wx:if="{{list.length>0}}">
+    <view class="footer-view">
+        <van-checkbox custom-class="chenck-view" value="{{ checked }}" checked-color="red" bind:change="onChange">全选</van-checkbox>
+        <view class="view-vv">
+            <text  style="width:80rpx;font-size:30rpx" >总计:</text>
+            <text style="color:red">￥{{allamoney}}</text>
+            <text style="font-size:26rpx;color:grey;padding-left:10rpx">￥{{allmoney}}</text>
+            <van-button type="danger" custom-class="button-iconD {{checked==false?'button-iconD':'button-iconE'}}" round bindtap="addso">接龙</van-button>
+            <van-button  bindtap="addserver" round  custom-class="button-icon {{allmoney>=arr[0].lowPrice?'button-iconA':'button-icon'}}">{{addnewStr}}</van-button>
+        </view>
+    </view>
+   </view>
+   <van-dialog id="van-dialog" />
+   <van-toast id="van-toast" />
+</view>

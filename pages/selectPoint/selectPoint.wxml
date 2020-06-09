@@ -1,0 +1,80 @@
+<!--选择自提点.wxml-->
+<view class="containerBox">
+  <view class="header">
+    <view class="searchBox">
+      <image src="../images/search.png" class="searchImg"></image>
+      <!-- <view class="sCity">{{ city }}</view> -->
+      <!-- <image src="../images/down.png" class="searchImg2"></image> -->
+      <view class="place" bindtap="addnav">请输入社区名称</view>
+      <image src="../images/headerBgi.jpg" class="bgi"></image>
+    </view>
+
+    <view class="cityBox">
+      <view>当前地址</view>
+      <view style=" position: relative;">
+        <view class="bigFont">{{address}}</view>
+        <view class="smallFont">
+          <image bindtap="shuaxin" src="../images/shuaxin.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="choseBox">请选择附近的服务商</view>
+  </view>
+  <!-- header结束 -->
+
+
+  <view class="nearbyAgentsTitle">
+    <view class="line"></view>
+    <view>附近的服务商</view>
+  </view>
+
+  <!-- 有代理商显示以下部分 -->
+  <view class="agentBox" wx:for="{{ agentsList }}" wx:key="id" wx:if="{{ noAgent==false }}">
+    <view class="aLeft" bindtap="toDetails" id="{{ item.id }}">
+      <view class="agentImg">
+        <image src="{{ item.shopImage }}"></image>
+      </view>
+      <view class="agentInfo">
+        <view class="name">{{ item.shopName }}</view>
+        <!-- <view class="phone">联系人电话：{{ item.phone }}</view> -->
+        <view class="adress">{{ item.address }}</view>
+      </view>
+    </view>
+    <view class="aRight"  id="{{ item.id }}">
+      <view class="smallFont2">{{item.distance}}km</view>    
+      <!-- <view class="erweima">
+        <image src="{{ item.qrCodeUrl }}"></image>
+      </view> -->
+      <!-- <view class="smallFont2">二维码长按保存</view>
+      <view class="smallFont2">扫一扫相册识别</view> -->
+    </view>
+  </view>
+
+
+
+  <!-- 没有代理商显示以下部分 -->
+  <view class="agentBox" wx:for="{{ noAgentsList }}" wx:key="id" wx:if="{{ noAgent==true }}">
+  <view class="aLeft" id="{{ item.id }}">
+    <view class="agentImg">
+      <image src="{{ item.headUrl }}"></image>
+    </view>
+    <view class="agentInfo">
+      <view class="name">{{ item.description }}</view>
+      <view class="phone">联系人电话：{{ item.phone }}</view>
+      <view class="adress">{{ item.agentName }}</view>
+    </view>
+  </view>
+  <view class="aRight" bindtap="showPopup" id="{{ item.id }}">
+    <view class="erweima">
+      <image src="{{ item.qrImage }}"></image>
+    </view>
+    <view class="smallFont2">二维码长按保存</view>
+    <view class="smallFont2">扫一扫相册识别</view>
+  </view>
+</view>
+
+  <!-- 遮罩层显示大屏的二维码 -->
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <image src="{{ erweima }}" class="ma" show-menu-by-longpress="true"></image>
+  </van-popup>
+</view>

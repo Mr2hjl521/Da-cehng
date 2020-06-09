@@ -1,0 +1,33 @@
+<view>
+<view style="display:flex">
+    <van-search
+      value="{{ value }}"
+      placeholder="请输入搜索关键词"
+       input-align="center"
+      bind:change="onChange"
+      bind:blur="addblur"
+      bind:search="onSearch"
+    />
+     <text style="float:right;margin-top:30rpx">搜索</text>
+     </view>
+    <!-- <van-search value="{{ value }}"  bind:search="onSearch"   input-align="center" placeholder="请输入搜索关键词" /> -->
+    <!-- <text>搜索</text>  -->
+     <!-- 商品 -->
+    <view>
+        <view class="con-tent-viewthree" wx:for="{{addlist}}" wx:key="index"  catchtap="toDetails" data-id='{{ item.id }}'>
+                <view style="margin-left:18rpx;margin-top:20rpx">
+                     <van-image
+                        width="110"
+                        height="90"
+                        src="{{item.imageUrl}}"
+                      />
+                </view>
+                <view class="con-tent-viewA">{{item.name}}</view>
+                <view class="con-tent-viewB">{{item.features}}</view>
+                <view class="con-tent-viewC">
+                    <text style="color:red;margin-right:20rpx">￥{{item.specialPrice}}</text>
+                    <text style="margin-right:50rpx">￥{{item.price}}</text>
+                </view>
+            </view>
+    </view>
+</view>

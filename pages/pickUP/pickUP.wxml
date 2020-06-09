@@ -1,0 +1,80 @@
+<view class="box">
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="待自提">
+      <view class="boxone" wx:for="{{ list }}" wx:key="index" bindtap="addfire" data-index="{{index}}" data-id="{{item.id}}" data-oStyle="{{item.oStyle}}">
+        <view class="status">
+          <view class="addresskey">
+            自提地址:{{item.aAddress}}
+          </view>
+        </view>
+        <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+          <view class="boxlist_img">
+            <image src="{{item.imageUrl}}"></image>
+          </view>
+          <view class="boxlist_txt">
+            <view class="txt">{{item.name}}</view>
+
+            <view class="txt">¥{{item.specialPrice}}</view>
+          </view>
+          <view class="boxlist_num" style="margin-top:50rpx">
+            ×{{item.amount}}
+          </view>
+        </view>
+        <view class="operate">
+          <text class="icon-text">实付:￥{{item.oSpecialPrice}}</text>
+        </view>
+      </view>
+    </van-tab>
+    <!-- 已完成 -->
+    <van-tab title="已完成">
+      <view class="boxone" wx:for="{{ list }}" wx:key="index" bindtap="addfire" data-index="{{index}}" data-id="{{item.id}}" data-oStyle="{{item.oStyle}}">
+        <view class="status">
+          <view class="addresskey">
+            自提地址:{{item.aAddress}}
+          </view>
+        </view>
+        <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+          <view class="boxlist_img">
+            <image src="{{item.imageUrl}}"></image>
+          </view>
+          <view class="boxlist_txt">
+            <view class="txt">{{item.name}}</view>
+
+            <view class="txt">¥{{item.specialPrice}}</view>
+          </view>
+          <view class="boxlist_num" style="margin-top:50rpx">
+            ×{{item.amount}}
+          </view>
+        </view>
+        <view class="operate">
+          <text class="icon-text">实付:￥{{item.oSpecialPrice}}</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已取消">
+      <view class="boxone" wx:for="{{ list }}" wx:key="index" bindtap="addfire" data-index="{{index}}" data-id="{{item.id}}" data-oStyle="{{item.oStyle}}">
+        <view class="status">
+          <view class="addresskey">
+            自提地址:{{item.aAddress}}
+          </view>
+        </view>
+        <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+          <view class="boxlist_img">
+            <image src="{{item.imageUrl}}"></image>
+          </view>
+          <view class="boxlist_txt">
+            <view class="txt">{{item.name}}</view>
+
+            <view class="txt">¥{{item.specialPrice}}</view>
+          </view>
+          <view class="boxlist_num" style="margin-top:50rpx">
+            ×{{item.amount}}
+          </view>
+        </view>
+        <view class="operate">
+          <text class="icon-text">实付:￥{{item.oSpecialPrice}}</text>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

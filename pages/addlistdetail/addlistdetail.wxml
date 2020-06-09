@@ -1,0 +1,182 @@
+<view class="box">
+   <view class="header">
+      <view class="hecher" wx:for="{{list.orderProductDtoList}}"  wx:key="index">
+         <view class="hearder-view">
+            <van-image
+                width="69"
+                height="69"
+                src="{{item.pImageUrl}}"
+              />
+          </view>
+          <view class="adder-viedw">
+              <view style="color:black">{{item.pName}}</view>
+              <!-- <view class="err-view">{{item.pDesc}}</view> -->
+              <view style="margin-top:34rpx"><text style="color:red;margin-right:20rpx">接龙价：{{item.uhPrice}}</text> <text>原价：{{item.pPrice}}</text></view>
+          </view>
+      </view>
+   </view>
+   <view class="center" wx:if="{{list.fightStatus==0}}">
+   
+        <text style="margin-left:30rpx">接龙剩余时间还剩：</text>
+        <van-count-down
+          style="float:right;margin-right:90rpx"
+          use-slot
+          time="{{ time }}"
+          bind:change="onChange"
+          
+        >
+           <text class="item">{{ timeData.days }}</text>天
+          <text class="item">{{ timeData.hours }}</text>:
+          <text class="item">{{ timeData.minutes }}</text>:
+          <text class="item">{{ timeData.seconds }}</text>
+        </van-count-down>
+
+   </view>
+   <view class="button-viweer" wx:if="{{list.fightStatus==0}}">
+     <van-button type="info" custom-class="button-viweerA" round open-type="share">邀请好友</van-button>
+     <van-button type="info" custom-class="button-viweerB" round bindtap="onGotUserInfo" >帮自己/好友购买</van-button>
+   </view>
+   <view class="footer-view">
+      <view class="footer-er">
+          <text style="margin-left:30rpx;float:left">接龙列表</text>
+      </view>
+      <view class="bottom" wx:for="{{list.fightUserOrderBos}}"  wx:key="index">
+          <view class="bottom-viewA">
+              <text>{{index+1}}</text>
+          </view>
+          <view class="bottom-viewB">
+              <view>
+                 <van-image
+                    round
+                    width="50"
+                    height="50"
+                    src="{{item.userAvatarUrl}}"
+                  />
+                  <text class="adder-text">{{item.userNickName}}</text>
+                  <text class="adder-textB" style="color:#ff4848"  data-indexA="{{index}}" bindtap="deletas" wx:if="{{(list.fightStatus==0||list.fightStatus==1) && item.judegeId=='展示全部'}}">删除ta</text>
+
+                  <text class="adder-textC" style="color:#ff4848" data-indexA="{{index}}" wx:if="{{item.judegeId=='展示全部'}}" bindtap="upDate" wx:if="{{(list.fightStatus==0||list.fightStatus==1) && item.judegeId=='展示全部'}}">修改</text>
+
+                  <text class="adder-textA">{{item.uPhone}}</text>
+                  <view class="adder-view-icon"  wx:for="{{item.fightProductBos}}" wx:for-item="additem"  wx:key="index">
+                      <text>{{additem.productName}}</text>
+                       <text class="text-icon-view">￥{{additem.uhPrice}}</text>
+                       <text class="text-icon-view">×{{additem.productAmount}}</text>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="list-view"></view>
+   </view>
+   <view class="adder-view" wx:if='{{list.fightStatus==0&&addId!=0}}'>
+       <view class="ivoner" style="width:40%" >
+           <view style="margin-top:10rpx"><text>以接龙人数:</text><text style="color:#ff4848">{{personnumber}}人</text></view>
+           <view><text>总价:</text><text style="color:#ff4848">￥{{allmoney}}</text></view>
+       </view>
+       <view class="addbutin" style="width:60%">
+          <!-- 按钮 -->
+           <view style="backgroud:#bababa" bindtap="addcancel">取消订单</view>
+           <view class="adders" bindtap="addcancelA">提交订单</view>
+       </view>
+     </view>
+     <view class="adder-view" wx:if='{{list.fightStatus==1&&addId!=0}}'>
+       <view class="ivoner" style="width:40%" >
+           <view style="margin-top:10rpx"><text>以接龙人数:</text><text style="color:#ff4848">{{personnumber}}人</text></view>
+           <view><text>总价:</text><text style="color:#ff4848">￥{{allmoney}}</text></view>
+       </view>
+       <view class="addbutin" style="width:60%">
+          <!-- 按钮 -->
+           <view class="adders" style="width:100%"  bindtap="addcancelA">提交订单</view>
+       </view>
+    </view>
+    <view class="adder-view" wx:if='{{list.fightStatus==2&&addId!=0}}'>
+        
+    </view>
+       <!-- <view style="width:40%" wx:if="{{list.fightStatus==0}}">
+           总价：
+           <text>1085</text>
+       </view>
+       <view style="background:#fe4646;color:white;width:60%" bindtap="addcancel">
+           取消订单
+       </view> -->
+    <!-- 帮自己好友购买 弹出框 -->
+    <van-overlay show="{{ show }}" bind:click="onClickHide">
+      <view class="add-view" bindtap="addwrong">
+           <van-icon name="cross" />
+        </view>
+      <view class="wrapper">
+        <view style="margin-top:50rpx">
+          <van-cell-group>
+              <van-field
+                type="number"
+                value="{{ value }}"
+                placeholder="请输入手机号"
+                border="{{ false }}"
+                bind:change="onChangeC"
+              />
+          </van-cell-group>
+        </view>
+        <view wx:for="{{addlist}}" wx:for-item="item"  wx:key="index">
+           <van-cell-group>
+              <van-field
+                data-id="{{index}}"
+                type="number"
+                value="{{ item.amount }}"
+                placeholder="{{item.pName}}"
+                border="{{ false }}"
+                bind:change="onChangeA"
+              />
+          </van-cell-group>
+        </view>
+        <view style="color:red;font-size:25rpx;margin:30rpx 10%">无需产品不需要填写</view>
+        <view class="adder-button" bindtap="addserveA">
+            参与接龙
+        </view>
+      </view>
+     
+    </van-overlay>
+    <!-- 修改弹出框 -->
+     <van-overlay show="{{ upDatashow }}" >
+      <view class="add-view" bindtap="addwrongup">
+           <van-icon name="cross" />
+        </view>
+      <view class="wrapper">
+        <view style="margin-top:50rpx">
+          <van-cell-group>
+              <van-field
+                disabled
+                type="number"
+                value="{{ uPhone }}"
+                placeholder="请输入手机号"
+                border="{{ false }}"
+              />
+          </van-cell-group>
+        </view>
+        <view wx:for="{{upDateaddlist}}" wx:for-item="item"  wx:key="index">
+           <van-cell-group>
+              <van-field
+                data-id="{{index}}"
+                type="number"
+                value="{{ item.amount }}"
+                placeholder="{{item.pName}}"
+                border="{{ false }}"
+                bind:change="onChangeB"
+              />
+          </van-cell-group>
+        </view>
+        <!-- <view style="color:red;font-size:25rpx;margin:30rpx 10%">无需产品不需要填写</view> -->
+        <view class="adder-button" bindtap="addserveYes">
+            确认修改
+        </view>
+      </view>
+     
+    </van-overlay>
+    <van-toast id="van-toast" />
+   <van-dialog id="van-dialog" />
+    <van-popup show="{{ getuserkey }}" bind:close="onClose">
+    <view class="title2">提示</view>
+    <view class="btn_txt">查看商品需要进行用户授权，是否授权</view>
+    <button class="btn_spy_one btn_spy" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" bindtap="addser">确认</button>
+    <button class="btn_spy_two btn_spy" bindtap="giveup">取消</button>
+  </van-popup>
+</view>

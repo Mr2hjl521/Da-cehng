@@ -1,0 +1,67 @@
+<!--邀请好友.wxml-->
+<view class="containerBox">
+  <!-- 背景图 -->
+  <image src="../images/bgi8.jpg" class="bgi" style="height:{{ windowHeight }}px"></image>
+  <!-- 白框框 -->
+  <view class="box">
+    <image src="../images/pic8.png" class="whiteImg"></image>
+    <view class="iAvatarUrlBox">
+      <view class="autoBox">
+        <image src="{{ avatarUrl }}" class="avatarUrl"></image>
+      </view>
+    </view>
+    <!-- 名字+广告 -->
+    <view class="box9">
+      <view class="name">{{ nickname }}</view>
+      <view class="box6">
+        <image src="../images/icon8.png" class="icon"></image>
+        <view class="title">分享满10人可升级为合伙人</view>
+        <image src="../images/icon8.png" class="icon"></image>
+      </view>
+    </view>
+    <!-- 白框的下半部分开始 -->
+    <view class="number">已邀请人数{{ number }}人</view>
+
+    <!-- 邀请人展示部分  可滑动 -->
+    <view class="friendsBox">
+      <view class="friend" wx:for="{{ friendList }}" wx:key="index">
+        <view class="friendInfo">
+          <view class="avatarUrlBox2">
+            <view class="autoBox2">
+              <image src="{{ item.avatarUrl }}"></image>
+            </view>
+          </view>
+          <view class="name2">{{ item.nickname }}</view>
+        </view>
+        <view>{{ item.createTime1 }}</view>
+      </view>
+    </view>
+
+
+
+    <!--生成海报  -->
+    <!-- <view class='imagePathBox' hidden="{{maskHidden == false}}" bindtap="closeWindow">
+      <image src="{{ imagePath }}" class='shengcheng'></image>
+      <button class='baocun' catchtap='baocun'>下载分享给好友</button>
+    </view>
+    <view hidden="{{maskHidden == false}}" class="mask"></view>
+    <view class="canvas-box">
+      <canvas style="width: 150px;height: 250px;position:fixed;" canvas-id="mycanvas" wx:if="{{ show==true }}" />
+    </view> -->
+
+    <view class="btn" bindtap='formSubmit'>生成分享海报</view>
+
+  </view>
+
+
+  <!-- 二维码弹窗 -->
+  <view class="dark" class="dark {{ windows == true ? 'show' : 'unshow'}}" catchtap="closeWindow"></view>
+  <view class="windows" class="windows {{ windows == true ? 'show' : 'unshow' }}">
+    <image src="{{ imagePath}}" class="erweima"></image>
+  </view>
+  <button catchtap='baocun' class="windowsBtn {{ windows == true ? 'show' : 'unshow' }}">下载分享给好友</button>
+  <!-- 画布 -->
+  <view class="canvas-box">
+    <canvas style="width: 190px;height: 300px;position:fixed;" canvas-id="mycanvas" />
+  </view> 
+</view>

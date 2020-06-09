@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-nav-bar": "../../miniprogram_npm/@vant/weapp/nav-bar/index"
+  },
+    "navigationBarTitleText": "选择收货地址",
+      "navigationStyle": "custom"
+}

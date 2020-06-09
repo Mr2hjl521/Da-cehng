@@ -1,0 +1,96 @@
+.tap {
+  padding: 40rpx 40rpx 0 40rpx;
+  font-size: 32rpx;
+}
+.consignee {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #ccc solid;
+  line-height: 100rpx;
+}
+.consignee view {
+  height: 100rpx; 
+  float: left;
+  line-height: 100rpx;  
+}
+.consignee input {
+  width: 400rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 15rpx
+}
+.phone {
+    width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #ccc solid;
+  line-height: 100rpx
+}
+.phone view {
+  height: 100rpx; 
+  float: left;
+  line-height: 100rpx;  
+}
+.phone input {
+  width: 400rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 25rpx;
+  margin-left: 15rpx  
+}
+.address {
+   width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #ccc solid;
+  line-height: 100rpx
+}
+.address view {
+ height: 100rpx; 
+  float: left;
+  line-height: 100rpx;  
+}
+.address input {
+  width: 400rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 25rpx;
+  margin-left: 15rpx  
+}
+.city {
+   width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #ccc solid;
+  line-height: 100rpx
+}
+.city .one {
+ height: 100rpx; 
+  float: left;
+  line-height: 100rpx;  
+}
+.city .two {
+  width: 300rpx;
+  height: 50rpx;
+   float: left;
+  margin-left: 15rpx;
+}
+.city .two view {
+  display: inline-block
+}
+.picker {
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.bottom {
+  width: 90%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 0rpx;
+  border: 1px red solid;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 700rpx;
+  color: white;
+  background-color: #f73f22;
+}

@@ -1,0 +1,4 @@
+<!--关于我们.wxml-->
+<view class="box">
+  <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/03/06/hj.jpg" class="about" mode="widthFix"></image>
+</view>

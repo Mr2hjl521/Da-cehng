@@ -1,0 +1,187 @@
+/* 选择自提点.wxss */
+page {
+  height: 100%;
+}
+.header {
+  height: 320rpx;
+  padding-top: 20rpx;
+  position: relative;
+}
+.bgi {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+.searchBox {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 88%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+}
+
+.searchImg {
+  width: 50rpx;
+  height: 50rpx;
+  margin: auto 0;
+  margin-left: 20rpx;
+}
+.sCity {
+  margin: 0 20rpx;
+  font-weight: 700;
+ 
+}
+.searchImg2{
+  width: 30rpx;
+  height: 30rpx;
+  margin: auto 0;
+}
+.place {
+  margin-left: 20rpx;
+  color: #A1A1A1;
+}
+.cityBox {
+  width: 555rpx;
+  line-height: 70rpx;
+  /* background-color: pink; */
+  margin: 0 auto;
+  margin-top: 40rpx;
+  text-align: center;
+  color: #fff;
+}
+.bigFont {
+  font-size: 36rpx;
+  width: 
+}
+.smallFont {
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 0;
+}
+.smallFont image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.choseBox{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 420rpx;
+  background-color: #fff;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20rpx;
+  box-shadow:0 10rpx 20rpx rgba(0,0,0,0.1);
+}
+.nearbyAgentsTitle {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  margin-top: 100rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.line {
+  width: 10rpx;
+  height: 60rpx;
+  background-color: #F75351;
+  margin-right: 20rpx;
+}
+.agentBox {
+  border-bottom: 1rpx solid #E5E5E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+}
+.aLeft {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+
+}
+.aRight {
+  width: 22%;
+}
+.erweima {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #ccc;
+  margin: 10rpx auto;
+}
+  
+.erweima image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.smallFont2 {
+  font-size: 21rpx;
+  color: #686868;
+  text-align: center;
+  margin-top: 54%;
+}
+.agentImg {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  /* border: 1rpx solid #B2B2B2 ; */
+}
+.agentImg image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.agentInfo {
+  width: 400rpx;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+}
+.name {
+  font-size: 34rpx;
+  margin-bottom: 5rpx;
+}
+.phone {
+  color: #646464;
+  font-size: 28rpx;
+  margin-bottom: 5rpx;
+}
+.adress {
+  font-size: 30rpx;
+  width: 270rpx;
+  height: 48rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.wrapper {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
+.ma {
+  width: 440rpx;
+  height: 440rpx;
+}
+

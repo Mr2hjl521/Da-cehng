@@ -1,0 +1,303 @@
+/*邀请好友.wxss */
+page {
+  position: relative;
+}
+.bgi {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -1;
+}
+.box {
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 200rpx;
+  position: relative;
+}
+.whiteImg {
+  width: 100%;
+  height: 800rpx;
+}
+.iAvatarUrlBox {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  position: absolute;
+  top: 90rpx;
+  left: 37%;
+  z-index: 999;
+  box-shadow:0 10rpx 20rpx rgba(245,198,198,0.7);
+}
+.autoBox {
+  width: 168rpx;
+  height: 168rpx;
+  margin: 7rpx auto;
+  border-radius: 50%;
+}
+
+.avatarUrl {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.box9 {
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  top: 280rpx;
+  left: 0;
+  z-index: 998;
+}
+.name {
+  text-align: center;
+  margin-top: 15rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.box6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rpx;
+}
+.title {
+  display: block;
+  color: #FD0062;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.icon {
+  width:30rpx;
+  height: 40rpx;
+  margin: 0 5rpx;
+}
+/* 人数 */
+.number {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  top: 410rpx;
+  left: 0;
+  z-index: 998;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  letter-spacing: 1.5rpx;
+  font-weight: 600;
+}
+
+/* 邀请人展示部分  可滑动 */
+.friendsBox {
+  width: 100%;
+  height: 440rpx;
+  overflow: scroll;
+ 
+  position: absolute;
+  top: 490rpx;
+  left: 0;
+  z-index: 998;
+}
+.friend {
+  height: 120rpx;
+  line-height: 120rpx;   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.friendInfo {
+  display: flex;
+  flex-direction: row;
+}
+.avatarUrlBox2 {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:0 10rpx 20rpx rgba(245,198,198,0.7);
+  margin-right: 26rpx;
+}
+.autoBox2 {
+  width: 112rpx;
+  height: 112rpx;
+  margin: 5rpx auto;
+  border-radius: 50%;
+}
+.autoBox2 image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+
+/* 生成分享海报的按钮 */
+.btn {
+  width: 75%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #FFD255;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: -22rpx;
+  left: 13%;
+  z-index: 998;
+}
+
+/* 生成海报部分样式开始 */
+.bgImg{
+  display: block;
+  width: 70%;
+  height: 366rpx;
+  margin: 5% 15%;
+}
+
+.btntxt{
+  color: #333;
+  font-size: 26rpx;
+}
+.imgBox{
+  text-align: center;
+  width: 100%;
+  margin-top:60rpx;
+  padding-bottom: 120rpx;
+  display: flex;
+}
+.img{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.m_l{
+  margin-left: 180rpx;
+}
+.zfbtn{
+  display:flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.zfbtn image{
+  width: 70rpx;
+  height: 70rpx;
+}
+button[class="zfbtn"]::after {
+  border: 0;
+} 
+button[class="zfbtn m_l"]::after {
+  border: 0;
+} 
+.imagePathBox{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.shengcheng{
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 50rpx;
+  left: 50%;
+  margin-left: -40%;
+  z-index: 10;
+}
+.baocun{
+  display: block;
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+  position: fixed;
+  bottom: 180rpx;
+  left: 28%;
+  color: #fff;
+  font-size: 32rpx;
+  background: #00A0EA;
+  z-index: 9999;
+
+}
+button[class="baocun"]::after{
+  border: 0;
+}
+.body {
+  height: 300rpx;
+  /* background-color: pink; */
+  overflow: hidden;
+}
+.canvas-box {
+  margin-top: 1000rpx;
+}
+
+/* 二维码弹窗 */
+.windows { 
+	width: 520rpx;
+  height: 800rpx;
+	position: fixed;
+	top: 15%;
+	left: 15%;
+	box-sizing: border-box;
+	z-index: 999;
+	border-radius: 2px;
+  overflow: hidden;
+}
+.show {
+	display: block;
+}
+.unshow {
+	display: none;
+}
+.dark {
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	background-color: #000;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.erweima {
+  width: 100%;
+  height: 100%;
+}
+
+.windowsBtn {
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+  position: fixed;
+  bottom: 20%;
+  left: 28%;
+  color: #fff;
+  font-size: 32rpx;
+  background: #00A0EA;
+  z-index: 999;
+}
+
+button[class="windowsBtn"]::after{
+  border: 0;
+}

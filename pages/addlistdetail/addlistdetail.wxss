@@ -1,0 +1,319 @@
+
+page{
+  background: #f6f6f6
+}
+.box{
+   width: 100%;
+   height: 100%;
+   background: #f6f6f6
+}
+.header{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#fe8c49,#f24852)
+}
+/* .header .hecher:first-child{
+
+} */
+.hecher{
+  /* float: left; */
+  width: 90%;
+  height: 200rpx;
+  background: white;
+  border-radius:50rpx;
+  margin-left: 5%;
+  display: flex;
+  margin-bottom: 50rpx;
+}
+.hearder-view{
+  width: 20%;
+  height: 140rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  margin-top: 30rpx;
+  margin-left: 24rpx;
+}
+.adder-viedw{
+  margin-top: 35rpx;
+  font-size: 27rpx;
+  line-height: 44rpx;
+  margin-left: 30rpx;
+  color: #bfbfbf;
+}
+/* .van-cell{
+  float:right !important;
+  width: 432rpx !important;
+} */
+
+.center{
+  width: 100%;
+  height: 130rpx;
+  background: white;
+  line-height: 130rpx;
+  text-align: center;
+
+}
+.button-viweer{
+  width: 100%;
+  height: 150rpx;
+  background: white;
+  line-height: 150rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.button-viweerA{
+  background: linear-gradient(#fe8c49,#f24852) !important;
+  width: 300rpx !important;
+  height: 90rpx !important;
+  border: none !important;
+
+}
+.button-viweerB{
+  border: 1px solid #fe8c49 !important;
+  width: 300rpx !important;
+  height: 90rpx !important;
+  margin-left: 15rpx !important;
+  background: white !important;
+  color: #f03f53 !important
+}
+.footer-view{
+   width: 100%;
+   height: 100%;
+}
+.footer-er{
+  width: 100%;
+  height: 60rpx;
+  line-height: 50rpx;
+  background: white;
+}
+.bottom{
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+}
+.bottom-viewA{
+  width: 70rpx;
+  height: 70rpx;
+  background: linear-gradient(#fe8c49,#f24852);
+  border-radius: 50%;
+  line-height: 70rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  margin-left: 18rpx;
+  color: white;
+}
+.bottom-viewB{
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  width: 80%;
+}
+.bottom-viewC{
+  
+  margin-left: 200rpx;
+}
+.text-view{
+  float: right;
+  margin:60rpx 0rpx;
+}
+.addview{
+  margin-top: 30rpx; 
+  line-height: 50rpx;
+  font-size: 28rpx;
+}
+.adder-view{
+  width: 100%;
+  height: 130rpx;
+  /* background: yellow; */
+  position: fixed;
+  display: flex;
+  bottom:0;
+}
+.adder-view>view{
+  width: 50%;
+  height: 130rpx;
+  background-color: #f5f5f5;
+  /* line-height: 130rpx; */
+  text-align: center;
+  
+}
+.ivoner{
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.addbutin{
+  display: flex;
+}
+.addbutin>view{
+  width: 50%;
+  height: 130rpx;
+  line-height: 130rpx;
+  text-align: center;
+  color: white;
+  background: #bababa;
+}
+.adders{
+  background: #fe4646 !important;
+}
+.item {
+  display: inline-block;
+  width: 22px;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  /* background-color: black; */
+  border-radius: 2px;
+  margin-top: 48rpx;
+  margin-right: 10rpx;
+}
+.err-view{
+  width: 400rpx;
+  height: 50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.adders-view{
+  width: 300rpx;
+  height: 100%;
+}
+.adder-text{
+  float: right;
+  width: 200rpx;
+  height: 60rpx;
+  margin-right: 44%;
+  margin-top:30rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap; 
+}
+.adder-textA{
+  float: right;
+  margin-right: 20rpx;
+  margin-top: -75rpx;
+}
+.adder-textB{
+  float: right;
+  margin-right: 100rpx;
+  margin-top: -150rpx;
+}
+.adder-textC{
+  float: right;
+  margin-right: -10rpx;
+  margin-top: -150rpx;
+}
+.adder-view-icon{
+  width: 100%;
+  height: 50rpx;
+  margin-top:20rpx;
+  /* background-color: red; */
+}
+.text-icon-view{
+  float: right;
+  margin-right: 30rpx;
+}
+.adder-view-icon>text{
+  font-size: 28rpx;
+  color:#9b9b9b;
+}
+.list-view{
+  width: 100%;
+  height: 150rpx;
+ 
+}
+.wrapper{
+  width: 80%;
+  height: auto;
+  background: white;
+  margin-left: 10%;
+  margin-top: 10%;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.input-icon{
+  margin-left: 10%;
+  width: 80%;
+  height: 80rpx;
+  background: #f5f5f5;
+  margin-top: 20px;
+  color: black;
+  text-align: center;
+}
+.van-field__input{
+   text-align: center !important;
+   background: #f5f5f5 !important;
+   width: 90% !important;
+   height: 80rpx !important;
+   margin-left: 30rpx !important;
+   
+}
+.adder-button{
+  position: relative;
+  width: 80%;
+  height: 100rpx;
+  background: #f03f53;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+  left: 10%;
+  top: 6%;
+  margin-bottom: 30rpx;
+}
+.add-view{
+  width: 40rpx;
+  height: 40rpx;
+  background: #f2f2f2;
+  position: relative;
+  top: 11%;
+  left: 83%;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40rpx;
+}
+.title2 {
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 30rpx;
+}
+
+.btn_txt {
+  padding: 20rpx;
+  padding-top: 20rpx;
+  height: 150rpx;
+  font-size: 34rpx;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  color: #A8A8A8;
+  letter-spacing: 1.5rpx;
+}
+
+.btn_spy {
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 0;
+}
+
+.btn_spy_one {
+  float: right;
+  color: #687AA0;
+}
+
+.btn_spy_two {
+  float: left;
+}
+
+.van-popup {
+  border-radius: 2px;
+  overflow: hidden;
+  height: 300rpx;
+  width: 75%;
+  position: fixed;
+  top: 400rpx;
+  left: 20%;
+  background: grey;
+  background-color: #fff !important;
+}

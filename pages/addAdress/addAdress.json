@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-area": "../../miniprogram_npm/@vant/weapp/area/index",
+    "van-toast": "../../miniprogram_npm/@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText": "添加收货地址"
+}

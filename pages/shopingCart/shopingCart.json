@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+    "van-image": "../../miniprogram_npm/@vant/weapp/image/index",
+    "van-submit-bar": "../../miniprogram_npm/@vant/weapp/submit-bar/index",
+    "van-checkbox": "../../miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-checkbox-group": "../../miniprogram_npm/@vant/weapp/checkbox-group/index",
+    "van-stepper": "../../miniprogram_npm/@vant/weapp/stepper/index",
+    "van-dialog": "../../miniprogram_npm/@vant/weapp/dialog/index",
+    "van-toast": "../../miniprogram_npm/@vant/weapp/toast/index",
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index"
+  },
+  "navigationBarTitleText": "购物车",
+  "navigationBarBackgroundColor": "#fff"
+
+}

@@ -1,0 +1,207 @@
+/* 具体商品.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.swiperBox {
+  width: 100%;
+  height: 540rpx;
+}
+
+.lunbo {
+  height: 100%;
+}
+
+.swImg {
+  width: 100%;
+  height: 100%;
+}
+
+.greyBox {
+  height: 20rpx;
+  background-color: #f2f2f2;
+}
+
+.contentBox {
+  background-color: #fff;
+  position: relative;
+}
+
+.box {
+  width: 90%;
+  /* height: 1000rpx; */
+  position: absolute;
+  top: -60rpx;
+  left: 5%;
+  background-color: #fff;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.gTitle {
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 36rpx;
+  letter-spacing: 2rpx;
+}
+
+.gPrice {
+  font-weight: 900;
+  font-size: 32rpx;
+}
+
+.gdelPeice {
+  margin-left: 15rpx;
+  font-size: 21rpx;
+  color: rgb(90, 77, 77);
+  text-decoration: line-through;
+}
+
+.gNum {
+  height: 80rpx;
+  font-size: 25rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.gTxt {
+  float: left;
+  display: inline;
+  font-weight: 400;
+}
+
+.stepper {
+  float: right;
+  width: 200rpx;
+  height: 40rpx;
+  border: 1px #ccc solid;
+  border-radius: 3rpx;
+  display: inline-flex;
+  box-sizing: border-box;
+}
+
+.stepper text {
+  height: 40rpx;
+  text-align: center;
+  width: 70rpx;
+  line-height: 40rpx;
+}
+
+.stepper input {
+  font-size: 18rpx;
+  height: 40rpx;
+  border-left: 1rpx #ccc solid;
+  border-right: 1rpx #ccc solid;
+  width: 60rpx;
+  box-sizing: border-box;
+}
+
+.gContent {
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+
+.box1 {
+  font-size: 28rpx;
+  color: #878787;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.font {
+  color: #000;
+  margin-right: 10rpx;
+  min-width: 120rpx;
+  height: 40rpx;
+}
+
+.ggBox {
+  width: 100%;
+}
+
+.ggPic {
+  display: block;
+  width: 100%;
+}
+
+.bottomShop {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 120rpx;
+  z-index: 100;
+  background-color: white;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.botLeft {
+  height: 100rpx;
+  width: 270rpx;
+  padding: 20rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.botLeft image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.botLeft label {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #fda29a;
+  position: absolute;
+  text-align: center;
+  line-height: 30rpx;
+  left: 85rpx;
+  font-size: 15rpx;
+  color: white;
+}
+
+.botright {
+  position: absolute;
+  right: 3%;
+  width: 464rpx;
+  height: 80rpx;
+  display: flex;
+  margin-top: 25rpx;
+  margin-right: 15rpx;
+}
+
+.botright button {
+  font-size: 30rpx;
+  text-align: center;
+  color: white;
+}
+
+.botright button:first-child {
+  background-color: #f79c94;
+  border-radius: 50rpx 0 0 50rpx;
+  flex: 1;
+}
+
+.buy {
+  border-radius: 0 50rpx 50rpx 0;
+  flex: 1;
+  background-color: #e23c3c;
+}
+
+.song {
+  border-radius: 0 50rpx 50rpx 0;
+  flex: 1;
+  background-color: #ccc;
+}
+.van-nav-bar__text{
+  color:white !important;
+}
+.van-icon{
+  color:black !important;
+}

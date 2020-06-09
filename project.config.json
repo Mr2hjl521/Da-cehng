@@ -1,0 +1,342 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"preloadBackgroundData": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.2",
+	"appid": "wxe3f5b7dd47976110",
+	"projectname": "miniprogram-66",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/selectPoint/selectPoint",
+					"pathName": "pages/selectPoint/selectPoint",
+					"query": "scene=oK5Jt5cpejF9WQjaVgL6r2ecMxXc",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/selectPoint/selectPoint",
+					"pathName": "pages/selectPoint/selectPoint",
+					"query": "q=http%3A%2F%2Fwww.fancyopen.com%2Fyh70otPDYn.txt%3Fid%3D10&scancode_time=1584683064",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/selectPoint/selectPoint",
+					"pathName": "pages/selectPoint/selectPoint",
+					"query": "q=http%3A%2F%2Fwww.fancyopen.com%2Fyh70otPDYn.txt%3Fid%3D35&scancode_time=1584683095",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/category/category",
+					"pathName": "pages/category/category",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/commodityDetails/commodityDetails",
+					"pathName": "pages/commodityDetails/commodityDetails",
+					"query": "q=http%3A%2F%2Fwww.fancyopen.com%2Fyh70otPDYn.txt%3Fid%3D35&scancode_time=1584683095",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/person/person",
+					"pathName": "pages/person/person",
+					"query": "q=http%3A%2F%2Fwww.fancyopen.com%2Fyh70otPDYn.txt%3Fid%3D35&scancode_time=1584683095",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/selectAddress/selectAddress",
+					"pathName": "pages/selectAddress/selectAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/invitedMembers/invitedMembers",
+					"pathName": "pages/invitedMembers/invitedMembers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopingCart/shopingCart",
+					"pathName": "pages/shopingCart/shopingCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopingCart/shopingCart",
+					"pathName": "pages/shopingCart/shopingCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderPage/orderPage",
+					"pathName": "pages/orderPage/orderPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderDetail/orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/invitedMembers/invitedMembers",
+					"pathName": "pages/invitedMembers/invitedMembers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/helpFriend/helpFriend",
+					"pathName": "pages/helpFriend/helpFriend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/helpFriend/helpFriend",
+					"pathName": "pages/helpFriend/helpFriend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/storeSolitairePage/storeSolitairePage",
+					"pathName": "pages/storeSolitairePage/storeSolitairePage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/helpFriend/helpFriend",
+					"pathName": "pages/helpFriend/helpFriend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/storeSolitairePage/storeSolitairePage",
+					"pathName": "pages/storeSolitairePage/storeSolitairePage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/storeSolitairePage/storeSolitairePage",
+					"pathName": "pages/storeSolitairePage/storeSolitairePage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderPage/orderPage",
+					"pathName": "pages/orderPage/orderPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/xorderPage/xorderPage",
+					"pathName": "pages/xorderPage/xorderPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/xorderDetail/xorderDetail",
+					"pathName": "pages/xorderDetail/xorderDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/merchantName/merchantName",
+					"pathName": "pages/merchantName/merchantName",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/service/service",
+					"pathName": "pages/service/service",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addcenter/addcenter",
+					"pathName": "pages/addcenter/addcenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/amendpassword/amendpassword",
+					"pathName": "pages/amendpassword/amendpassword",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopgo/shopgo",
+					"pathName": "pages/shopgo/shopgo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/freight/freight",
+					"pathName": "pages/freight/freight",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pickUP/pickUP",
+					"pathName": "pages/pickUP/pickUP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/deliverGooder/deliverGooder",
+					"pathName": "pages/deliverGooder/deliverGooder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/person",
+					"pathName": "pages/person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addresssiteTwo/addresssiteTwo",
+					"pathName": "pages/addresssiteTwo/addresssiteTwo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addlistdetail/addlistdetail",
+					"pathName": "pages/addlistdetail/addlistdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/solitairelist/solitairelist",
+					"pathName": "pages/solitairelist/solitairelist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/merchantName/merchantName",
+					"pathName": "pages/merchantName/merchantName",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/solitaire/solitaire",
+					"pathName": "pages/solitaire/solitaire",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/merchantName/merchantName",
+					"pathName": "pages/merchantName/merchantName",
+					"scene": null
+				}
+			]
+		}
+	}
+}

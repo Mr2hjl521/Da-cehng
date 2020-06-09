@@ -1,0 +1,150 @@
+<!--个人中心.wxml-->
+<view class="containerBox" wx:if="{{ad!=2}}">
+  <view class="header">
+    <!-- title开始 -->
+    <view class="title">用户中心</view>
+    <!-- title结束 -->
+    <view class="infoBox">
+      <view class="iAvatarUrlBox">
+        <image src="../images/dd2.png" wx:if="{{ infoShow==false }}"></image>
+        <image src="{{ avatarUrl }}" wx:if="{{ infoShow==true }}">></image>
+      </view>
+
+      <view class="middle">
+        <view class="iBtnBox">
+          <view wx:if="{{ infoShow==true }}" class="box7">{{ nickName }}</view>
+          <button open-type="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" class="loginBtn" wx:if="{{ infoShow==false }}" class="button-icon"> 登录
+          </button>
+          <view wx:if="{{  infoShow==true }}" class="myPhone">{{ phone }}</view>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="loginBtn" class="button-icon2" wx:if="{{ifphoneshow == true}}">
+            手机授权
+          </button>
+          <view class="window" wx:if="{{ infoShow==false }}" bindtap="showToast"></view>
+        </view>
+        <!-- 等级部分开始  identity=0是普通会员 1是合伙人-->
+        <view class="rank" wx:if="{{ infoShow==true }}">
+          <image class="rankImg2" src="../images/r1.png" wx:if="{{ identity==1 }}"></image>
+          <image class="rankImg" src="../images/r2.png" wx:if="{{ identity==0 }}"></image>
+        </view>
+        <!-- 等级部分结束-->
+      </view>
+    </view>
+    <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/34.png" class="bgi"></image>
+  </view>
+
+  <!-- 胡仁杰内容 -->
+
+  <view class="myorder" wx:if="{{ identity==1 }}">
+    <view class="mianTitle">
+      <view class="mLeft">
+        <view class="line">
+          <image src="../images/line.png"></image>
+        </view>
+        <view>我的订单</view>
+      </view>
+    </view>
+
+    <view class="model" >
+      <view class="toolsBox" bindtap="goOrder" data-type='0'>
+        <view class="imageBoxone">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/03/16/2.png"></image>
+        </view>
+        <view>待确认</view>
+        <view class="num" wx:if="{{ num1 != 0 }}">{{num1}}</view>
+      </view>
+      <view class="toolsBox" bindtap="goOrder" data-type='1'>
+        <view class="imageBoxone">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/03/16/5.png"></image>
+        </view>
+        <view>待收货</view>
+        <view class="num" wx:if="{{num2 != 0}}">{{num2}}</view>
+      </view>
+      <view class="toolsBox" bindtap="goOrder" data-type='2'>
+        <view class="imageBoxone">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/03/16/1.png"></image>
+        </view>
+        <view>待自提</view>
+        <view class="num" wx:if="{{num3 != 0}}">{{num3}}</view>
+      </view>
+      <view class="toolsBox" bindtap="goOrder" data-type='3'>
+        <view class="imageBoxone">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/03/16/4.png"></image>
+        </view>
+        <view>已完成</view>
+        <view class="num" wx:if="{{num4 != 0}}">{{num4}}</view>
+      </view>
+      <view class="toolsBox" bindtap="goOrder" data-type='5'>
+        <view class="imageBoxone">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/03/16/3.png"></image>
+        </view>
+        <view >已取消</view>
+        <view class="num" wx:if="{{num5 != 0}}">{{num5}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 胡仁杰内容 -->
+
+
+  <view class="mainBox">
+    <view class="mianTitle">
+      <view class="mLeft">
+        <view class="line">
+          <image src="../images/line.png"></image>
+        </view>
+        <view>我的服务</view>
+      </view>
+    </view>
+    <view class="mianContent">
+      <view class="toolsBox" bindtap="toAboutUs">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/43.png"></image>
+        </view>
+        <view>关于我们</view>
+      </view>
+      <!-- 申请成为团长 -->
+      <view class="toolsBox ml10" bindtap="toApply" wx:if="{{ isHead==1||isHead==2 }}">
+        <view class="imageBox">
+          <image src="../images/tools2.png"></image>
+        </view>
+        <view>合伙人申请</view>
+      </view>
+      <!-- 已经申请过了显示邀请 -->
+      <view class="toolsBox ml10" bindtap="toInvited" wx:if="{{ isHead==3 }}">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/39.png"></image>
+        </view>
+        <view>邀请好友</view>
+      </view>
+      <!-- 商户登录 -->
+     <view class="toolsBox ml10"   bindtap="tojilongTen"   wx:if="{{ identity!=1 }}">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/44.png"></image>
+        </view>
+        <view>商户登录</view>
+      </view>
+      <!-- 我的接龙 -->
+      <view class="toolsBox ml10" bindtap="tojilong"  wx:if="{{ identity==1 }}">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/41.png"></image>
+        </view>
+        <view>我的接龙</view>
+      </view>
+      <!-- 地址管理 -->
+       <view class="toolsBox ml10" bindtap="tojilongmap"  wx:if="{{ identity==1 }}">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/42.png"></image>
+        </view>
+        <view>地址管理</view>
+      </view>
+    </view>
+    <!-- 商户登录 -->
+     <view class="toolsBox ml10"   bindtap="tojilongTen" style="margin-top:20rpx;margin-left:20rpx"  wx:if="{{ identity==1 }}">
+        <view class="imageBox">
+          <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/44.png"></image>
+        </view>
+        <view>商户登录</view>
+      </view>
+  </view>
+  <view class="footer-icon"></view>
+</view>

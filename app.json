@@ -1,0 +1,110 @@
+{
+  "pages": [
+    "pages/selectPoint/selectPoint",
+    "pages/invitedMembers/invitedMembers",
+    "pages/person/person",
+    "pages/category/category",
+    "pages/index/index",
+    "pages/applicationForCommander/applicationForCommander",
+    "pages/commodityDetails/commodityDetails",
+    "pages/aboutUs/aboutUs",
+    "pages/shopingCart/shopingCart",
+    "pages/orderPage/orderPage",
+    "pages/addAdress/addAdress",
+    "pages/selectAddress/selectAddress",
+    "pages/orderSuccess/orderSuccess",
+    "pages/evaluate/evaluate",
+    "pages/orderMessage/orderMessage",
+    "pages/orderDetail/orderDetail",
+    "pages/solitaire/solitaire",
+    "pages/solitairelist/solitairelist",
+    "pages/storeSolitairePage/storeSolitairePage",
+    "pages/addlistdetail/addlistdetail",
+    "pages/uncancel/uncancel",
+    "pages/merchantName/merchantName",
+    "pages/login/login",
+    "pages/service/service",
+    "pages/addcenter/addcenter",
+    "pages/amendpassword/amendpassword",
+    "pages/shopgo/shopgo",
+    "pages/freight/freight",
+    "pages/pagefreight/pagefreight",
+    "pages/pickUP/pickUP",
+    "pages/deliverGooder/deliverGooder",
+    "pages/siteaddserver/siteaddserver",
+    "pages/shopowner/shopowner",
+    "pages/map/map",
+    "pages/addresssiteTwo/addresssiteTwo",
+    "pages/dageimage/dageimage"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "大成优+"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/tabbar11.png",
+        "selectedIconPath": "pages/images/tabbar12.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "pages/images/tabbar21.png",
+        "selectedIconPath": "pages/images/tabbar22.png"
+      },
+      {
+        "pagePath": "pages/shopingCart/shopingCart",
+        "text": "购物车",
+        "iconPath": "pages/images/1_28.png",
+        "selectedIconPath": "pages/images/1_30.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "pages/images/tabbar31.png",
+        "selectedIconPath": "pages/images/tabbar32.png"
+      }
+    ],
+    "selectedColor": "#F93A1E",
+    "borderStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的微信信息将用于寻找附近的代理商信息"
+    }
+  },
+  "usingComponents": {
+    "van-image": "../../miniprogram_npm/@vant/weapp/image/index",
+    "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+    "van-toast": "../../miniprogram_npm/@vant/weapp/toast/index",
+    "van-field": "../../miniprogram_npm/@vant/weapp/field/index",
+    "van-count-down": "../../miniprogram_npm/@vant/weapp/count-down/index",
+    "van-overlay": "../../miniprogram_npm/@vant/weapp/overlay/index",
+    "van-nav-bar": "../../miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+    "van-tabbar": "../../miniprogram_npm/@vant/weapp/tabbar/index",
+    "van-tabbar-item": "../../miniprogram_npm/@vant/weapp/tabbar-item/index",
+    "van-checkbox": "../../miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-checkbox-group": "../../miniprogram_npm/@vant/weapp/checkbox-group/index",
+    "van-uploader": "../../miniprogram_npm/@vant/weapp/uploader/index",
+    "van-tab": "../../miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "../../miniprogram_npm/@vant/weapp/tabs/index",
+    "van-dialog": "../../miniprogram_npm/@vant/weapp/dialog/index",
+    "van-datetime-picker": "../../miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-search": "../../miniprogram_npm/@vant/weapp/search/index",
+    "van-radio": "../../miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "../../miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index"
+  },
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.3",
+      "provider": "wx50b5593e81dd937a"
+    }
+  }
+}

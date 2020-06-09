@@ -1,0 +1,10 @@
+<view class="box">
+    <view class="image-div" style="margin-top:250rpx;">
+         <van-image
+            width="150"
+            height="120"
+            src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/6.png"
+          />
+    </view>
+    <van-button type="info" round bindtap="buttoncan"  custom-class="buttonA">返回</van-button>
+</view>

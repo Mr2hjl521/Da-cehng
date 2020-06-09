@@ -1,0 +1,40 @@
+/* pages/helpFriend/helpFriend.wxss */
+.index {
+ margin-top: 100rpx;
+ margin-left: 80rpx;
+ margin-right: 80rpx;
+ background-color: pink;
+ border-radius: 15rpx;
+ padding: 20rpx 20rpx;
+}
+.phone {
+  width: 100%;
+  height: 60rpx;
+}
+.phone input {
+  width: 100%;
+  height: 100%;
+  border: 1px red solid
+}
+.list {
+  width: 100%;
+  height: 60rpx;
+}
+.list input {
+  width: 100%;
+  height: 100%;
+}
+.buttonTap {
+  width: 300rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 40rpx;
+  margin-left: 200rpx;
+}
+.buttonTap button {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: white;
+  background-color: red;
+}

@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<view class="box-view" wx:if="{{idder!=1}}">
+    <text style="font-size:25rpx;margin-left:30rpx;margin-top:15rpx;float:left;">添加到我的小程序</text>
+    <view class="box-viewtwo" bindtap="addservrt">添加</view>
+</view>
+<view class="imagg-view" wx:if="{{addshow==true}}">
+    <view class="button-view" bindtap="addshi">我记住了,去试试</view>
+</view>
+<view class="containerBox" wx:if="{{identity!=2}}">
+  <view class="header">
+    <view class="hLeft">
+      <view class="agentName">
+        <view class="anLeft">{{ agentInfo.shopName }}</view>
+        <view class="anRight" bindtap="toChangeCity">
+          <view style="color: #B4B4B4">切换</view>
+          <image src="../images/right1.png" class="right"></image>
+        </view>
+      </view>
+      <view class="agentAdress">
+        <view class="adressImg">
+          <image src="../images/adress.png"></image>
+        </view>
+        <view class="adders">{{ agentInfo.address }}</view>
+      </view>
+    </view>
+    <view class="hRight">
+      <image src="{{ agentInfo.shopImage }}" class="agentPic"></image>
+    </view>
+  </view>
+  <!-- 搜索栏 -->
+  <view class="search">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:focus="addfocus" shape="round" custom-class="searchBox" />
+  </view>
+  <view class="notice">
+    <van-notice-bar scrollable="false" text="公告：配送半径范围为{{range}}。 配送时间：{{deliveryTime}}  自提时间：{{pickupTime}}" color="#000" custom-class="noticeBar" />
+  </view>
+
+  <!-- 轮播图 -->
+  <view class="swiper">
+    <swiper class='lunbo' indicator-dots='true' autoplay='true' interval='4000'>
+      <swiper-item wx:for="{{ swiperList }}" wx:key="index">
+        <image src='{{ item.url }}' class='swImg' data-index="{{index}}" bindtap="{{item.id == 1 ?'drunpPerson':'drunpPersonA'}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 分类栏11开始 -->
+  <view class="categoryBox1">
+    <view class="cBox">
+      <view class="box" wx:for="{{ categoryList }}" wx:key="index" bindtap="toCategory" data-id='{{index}}'>
+        <view class="cImg">
+          <image src="{{ item.image }}"></image>
+        </view>
+        <view class="bTitle">{{ item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 分类栏11结束 -->
+    <!-- 商品热销 -->
+    <view class="con-tent-view">
+       <view class="con-tent-viewone">
+           <van-image
+              width="100%"
+              height="50"
+              src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/21.png"
+            />
+       </view>
+       <view class="con-tent-viewtwo" style="width:{{addwidth}};margin-left:{{addleft}}rpx" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" bindtouchend="touchend">
+            <view class="con-tent-viewthree" wx:for="{{addlist}}" wx:key="index" catchtap="toDetails" data-id='{{ item.id }}'>
+                <view style="margin-left:10rpx;margin-top:20rpx">
+                     <van-image
+                        width="110"
+                        height="90"
+                        src="{{item.imageUrl}}"
+                      />
+                </view>
+                <view class="con-tent-viewA">{{item.name}}</view>
+                <!-- <view class="con-tent-viewB">{{item.features}}</view> -->
+                <view class="con-tent-viewC">
+                     <text style="margin-right:14rpx;font-size:21rpx;text-decoration:line-through" wx:if="{{identity==1}}">￥{{item.price}}</text>
+                    <text style="color:red;margin-right:20rpx;font-size:21rpx" wx:if="{{identity==1}}">￥{{item.specialPrice}}</text>
+                    <text style="margin-right:14rpx;font-size:21rpx" wx:if="{{identity==0}}">￥{{item.price}}</text>
+                </view>
+            </view>
+       </view>
+    </view>
+  <!-- 分类栏22导航开始 -->
+  <view class="categoryBox2">
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <view  class="allbox {{currentTab == 0 ?'active2':''}}" data-current="0" bindtap="switchNav">
+        <image bindtap="addserver" src="../images/category/p12.png"  wx:if="{{currentTab == 0 }}" class="pimg"></image>
+        <image src="../images/category/p11.png" wx:if="{{currentTab != 0 }}" class="pimg"></image>
+        <!-- 动态旗帜 -->
+        <image bindload="gifImgLoad" src="../images/qi.gif" class="pimg hahaimg"></image>
+      </view>
+      <view  class="view-icon">
+            <!-- <text class="view-icon-text" v-for="{{todolist}}" wx:ket="index" data-id="item.id"></text> -->
+            <van-tabs active="{{ active }}" bind:change="onChange" title-active-color="#FD599E"  line-height="0px">
+              <van-tab wx:for="{{todolist}}" title="{{item.name}}"   nav-class="adder-text" wx:key="index"></van-tab>
+            </van-tabs>
+      </view>
+       
+    </scroll-view>
+  </view>
+  <!-- 分类栏22结束 -->
+  <!-- 分类栏22内容开始 -->
+  <view class="categoryBox2">
+    <!-- <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+            {{tabItem}}
+        </swiper-item>
+    </swiper> -->
+    <!-- 以上为联动内容暂时不用 -->
+    <view class="box2">
+      <view class="goodsBox" wx:for="{{ goodsList }}" wx:key="id" bindtap="toDetails" data-id='{{ item.id }}'>
+        <view class="goodImgBox">
+          <image src="{{ item.imageUrl }}"></image>
+        </view>
+        <view class="goodsTitle">{{ item.name }}</view>
+        <view class="goodsDes"></view>
+        <view class="googsPrice" wx:if="{{identity==0}}">¥{{item.price}}</view>
+        <view class="googsPrice" wx:if="{{identity==1}}">¥{{item.specialPrice}}<label class="delGoogsPrice">{{item.price}}</label></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分类栏22内容结束 -->
+  <van-popup show="{{ getuserkey }}" bind:close="onClose">
+    <view class="title2">提示</view>
+    <view class="btn_txt">查看商品需要进行用户授权，是否授权</view>
+    <button class="btn_spy_one btn_spy" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" bindtap="addser">确认</button>
+    <button class="btn_spy_two btn_spy" bindtap="giveup">取消</button>
+  </van-popup>
+  <!-- 客服 -->
+  <view class="serviceBox" bindtap="cellPhone">
+    <image src="../images/phone.png"></image>
+  </view>
+  <view class="serviceBoxA" bindtap="cellmap">
+    <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/22.png"></image>
+  </view>
+  <!-- 性能展示弹窗 -->
+  <view class="dark" class="dark {{ windows == true ? 'show' : 'unshow'}}"></view>
+  <view class="addressWindows" class="addressWindows {{ windows == true ? 'show' : 'unshow' }}">
+    <view class="imgBox">
+      <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/4.png"></image>
+    </view>
+    <view class="okBtn" bindtap="closeWindow"> </view>
+  </view>   
+  <van-toast id="van-toast" />                                                                                      
+</view>

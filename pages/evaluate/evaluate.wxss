@@ -1,0 +1,99 @@
+page {
+  background: #dcdcdc;
+    font-size: 28rpx;
+}
+
+.boxlist {
+  margin: 10rpx;
+  height: 220rpx;
+  position: relative;
+}
+
+.boxlist_img {
+  position: absolute;
+  left: 10%;
+  top: 0;
+  height: 150rpx;
+  width: 150rpx;
+  padding: 15rpx;
+  background: #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_img image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.boxlist_txt {
+  position: absolute;
+  left: 40%;
+  font-size: 26rpx;
+}
+
+.boxlist_num {
+  position: absolute;
+  line-height: 150rpx;
+  left: 80%;
+  top: 0;
+}
+
+.txt {
+  line-height: 75rpx;
+}
+
+.box {
+  background: white;
+  margin: 5%;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.message {
+  width: 80%;
+  margin: 2% 10%;
+  height: 50rpx;
+  position: relative;
+  overflow: hidden;
+  line-height: 50rpx;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.specialmessage {
+  width: 80%;
+  margin: 2% 10%;
+  position: relative;
+}
+.bto{
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.upmessage{
+  width: 90%;
+  margin: 5%;
+  background: white;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.mid{
+  width: 200rpx;
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx auto;
+  margin-top: 100rpx;
+}

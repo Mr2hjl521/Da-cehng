@@ -1,0 +1,20 @@
+
+<view class="tap">
+    <view class="consignee"><view>收件人:</view><input type="text" value="{{getNume}}" bindinput="saveName"></input></view>
+    <view class="phone"><view>联系电话:</view><input type="number" value="{{getPhone}}" bindinput="savePhone"></input></view>
+    <view class="city">
+    <view class="one">所在地区:</view> 
+    <picker wx:if="{{region}}" class="two" mode="region" bindchange="bindchangge" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker" >
+        {{region[0]}} {{region[1]}} {{region[2]}}
+    </view>
+     </picker>
+    </view>
+    <view class="address"><view>详细地址:</view><input type="text" value="{{detailAddress}}" bindinput="savaAddress"></input></view>
+
+
+    <button class="bottom" bindtap="save" wx:if="{{addnumber==0}}">保存</button>
+    <button class="bottom" bindtap="saveA" wx:if="{{addnumber==1}}">确认修改</button>
+    <van-toast id="van-toast" />
+</view>
+

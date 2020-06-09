@@ -1,0 +1,35 @@
+<view class="box">
+   <van-tabbar active="{{ active }}" bind:change="onChange">
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/25.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/13.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 店铺数据
+        </van-tabbar-item>
+        <!-- 图片2 -->
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/14.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/19.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 商品管理</van-tabbar-item>
+          <!-- 图片3 -->
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/12.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/18.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 个人中心</van-tabbar-item>
+      </van-tabbar>
+  <view class="header">
+    <van-image custom-class="image-view" round width="70" height="70" src="{{img}}" />
+    <view class="icon-viewA">
+      <view>商户昵称：{{name}}</view>
+      <view style="margin-top:30rpx">{{address}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="conttent-view">
+      <van-image   bindtap="addimage" round width="60" height="60" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/27.png" />
+      <van-image  bindtap="addserive" round width="60" height="60" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/28.png" />
+      <van-image bindtap="password" round width="60" height="60" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/26.png" />
+    </view>
+    <view class="conttent-viewA">
+      <view bindtap="addimage">服务商运营协议</view>
+      <view bindtap="addserive">服务商信息</view>
+      <view bindtap="password">密码修改</view>
+    </view>
+  </view>
+</view>

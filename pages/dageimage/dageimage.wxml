@@ -1,0 +1,14 @@
+<view class="box">
+     <van-nav-bar
+    title="修改服务商"
+    left-text="返回"
+    left-arrow
+    bind:click-left="onClickLeft"
+    bind:click-right="onClickRight"
+/>
+    <van-image
+      width="424"
+      height="1299"
+      src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/29.png"
+    />
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-toast": "../../miniprogram_npm/@vant/weapp/toast/index",
+    "van-nav-bar": "../../miniprogram_npm/@vant/weapp/nav-bar/index"
+  },
+  "navigationBarTitleText": "商品详情",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationStyle": "custom"
+}

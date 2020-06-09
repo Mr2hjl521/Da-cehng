@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-image": "../../miniprogram_npm/@vant/weapp/image/index"
+  },
+  "navigationBarTitleText": "商品接龙页",
+  "navigationBarBackgroundColor": "#fe9048"
+}

@@ -1,0 +1,71 @@
+<view class="box">
+  <van-tabbar active="{{ active }}" bind:change="onChange">
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/25.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/13.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 店铺数据
+        </van-tabbar-item>
+        <!-- 图片2 -->
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/14.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/19.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 商品管理</van-tabbar-item>
+          <!-- 图片3 -->
+        <van-tabbar-item>
+          <image slot="icon" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/12.png" mode="aspectFit" style="width: 30px; height: 18px;" />
+          <image slot="icon-active" src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/04/09/12/18.png" mode="aspectFit" style="width: 30px; height: 18px;" /> 个人中心</van-tabbar-item>
+      </van-tabbar>
+  <van-tabs type="card">
+    <!-- 已上架 -->
+    <van-tab title="已上架">
+      <view class="content" wx:for="{{addlist}}" wx:key="index">
+        <view class="content-viewA">
+          <van-image width="100" height="100" src="{{item.imageUrl}}" />
+        </view>
+        <view class="content-viewB">
+          <view class="content-text">{{item.name}}</view>
+          <view class="content-textA">{{item.bagFormat}}{{item.boxFormat}}{{item.boxWeight}}</view>
+          <!-- <view class="content-textA">{{item.desc}}</view> -->
+          <view style="margin-top:10rpx;display:flex">
+            <text style="color:red">￥{{item.specialPrice}}</text>
+            <text class="text-view">￥{{item.price}}</text>
+            <view class="view-icon-a" bindtap="addOut" data-id="{{item.id}}">
+              下架
+            </view>
+            <view class="view-icon-a" bindtap="addshowA" data-id="{{item.id}}">
+              设置库存
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="addsedff"></view>
+    </van-tab>
+    <!-- 未上架 -->
+    <van-tab title="未上架">
+      <view class="content" wx:for="{{list}}" wx:key="index">
+        <view class="content-viewA">
+          <van-image width="100" height="100" src="{{item.imageUrl}}" />
+        </view>
+        <view class="content-viewB">
+          <view class="content-text">{{item.name}}</view>
+          <view class="content-textA">{{item.bagFormat}}{{item.boxFormat}}{{item.boxWeight}}</view>
+          <!-- <view class="content-textA">{{item.desc}}</view> -->
+          <view style="margin-top:10rpx;display:flex">
+            <text style="color:red">￥{{item.specialPrice}}</text>
+            <text class="text-view">￥{{item.price}}</text>
+            <view class="view-icon-b" bindtap="dataserver" data-id="{{item.id}}">
+              上架
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="addsedff"></view>
+    </van-tab>
+  </van-tabs>
+  <!-- 弹出框 -->
+  <van-dialog use-slot type="number" title="库存" show="{{ show }}" show-cancel-button confirm-button-open-type="getUserInfo" bind:close="onClose" bind:getuserinfo="getUserInfo">
+    <van-cell-group>
+      <van-field value="{{ value }}" placeholder="请设置库存" border="{{ false }}" bind:change="onChangeA" />
+    </van-cell-group>
+  </van-dialog>
+  <!-- 成功提示 -->
+  <van-toast id="van-toast" />
+</view>

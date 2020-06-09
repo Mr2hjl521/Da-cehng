@@ -1,0 +1,35 @@
+
+<view class="box">
+   <view class="header" wx:for="{{list}}"  wx:key="index">
+      <view class="hecher">
+         <view class="hearder-view">
+            <van-image
+                width="69"
+                height="69"
+                src="{{item.productImage}}"
+              />
+          </view>
+          <view class="adder-viedw">
+              <view style="color:black">{{item.productName}}</view>
+              <!-- <view>产品描述</view> -->
+              <view style="margin-top:34rpx">零售价：{{item.productPrice}}</view>
+          </view>
+      </view>
+      <view class="adder-view">
+        <text>商品接龙价:</text>
+        <van-cell-group>
+            <van-field
+              type="digit"
+              data-id="{{index}}"
+              value="{{ item.uhPrice }}"
+              placeholder="请输入接龙价"
+              border="{{ false }}"
+              bind:change="onChange"
+            />
+        </van-cell-group>
+      </view>
+   </view>
+   <view class="addersy"></view>
+   <van-button type="warning" bindtap="addbutton" custom-class="button-icon">发起接龙</van-button>
+   <van-toast id="van-toast" />
+</view>

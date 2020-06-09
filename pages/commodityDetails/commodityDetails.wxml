@@ -1,0 +1,63 @@
+<!--具体商品.wxml-->
+<van-nav-bar
+  title="商品详情"
+  left-text="返回"
+  
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+<view class="containerBox" wx:if="{{identity!=2}}">
+  <!-- 轮播图 -->
+  <view class="swiperBox">
+    <swiper class='lunbo' autoplay='true' interval='4000'>
+      <swiper-item wx:for="{{ swiper }}" wx:key="index">
+        <image src='{{ item }}' class='swImg' data-image="{{item}}" bindtap="previewImage"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="greyBox"></view>
+  <!-- 轮播图结束 -->
+  <!-- 内容部分开始 -->
+  <view class="contentBox">
+    <view class="box">
+      <view class="gTitle">{{ message.name }}</view>
+      <view class="gPrice" wx:if="{{identity==0}}">¥{{price}}</view>
+      <view class="gPrice" wx:if="{{identity==1}}">¥{{specialPrice}}<label class="gdelPeice">¥{{price}}</label></view>
+      <view class="gNum" wx:if="{{identity==1}}">
+      <view class="gTxt">购卖数量：</view>
+         <van-stepper value="{{ 1 }}" bind:change="onChange" />
+      </view>
+      <view class="gContent">
+        <view class="box1">
+          <view class="font">产品规格</view>
+          <view>单袋规格：{{ message.bagFormat }}</view>
+          <view>箱规：{{ message.boxFormat }}</view>
+          <view>箱重：{{ message.boxWeight }}</view>
+        </view>
+        <view class="box1">
+          <view class="font">烹饪方式</view>
+          <view>{{ message.cookingMethod }}</view>
+        </view>
+      </view>
+      <image src="{{ detailsPic }}" class="ggPic" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 内容部分结束 -->
+  </view>
+
+ <view class="bottomShop" wx:if="{{identity==1}}">
+ <!--左侧-->
+  <!-- wx:if="{{shopNum !=0}}" -->
+  <view class="botLeft" bindtap="goshopping"> 
+  <image src="{{image}}" wx:if="{{shopNum==0}}"></image> 
+  <image src="{{imageA}}" wx:if="{{shopNum>0}}"></image> 
+  <label >{{shopNum}}</label>
+   </view>
+ <!--右侧-->
+   <view class="botright">
+     <button bindtap="goCar" style="background:#ff4400">加入购物车</button>
+     <button bindtap="orderPage"  class="buy" wx:if="{{tap == true}}">立即购买</button>
+     <button wx:if="{{tap == false}}" class="song">¥{{anum}}起订</button>
+   </view>
+   <van-toast id="van-toast" />
+ </view>

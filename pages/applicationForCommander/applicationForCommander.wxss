@@ -1,0 +1,47 @@
+/* 申请合伙人.wxss */
+page {
+  background-color: #2A2A35;
+}
+.img {
+  width: 100%;
+  display: block;
+}
+.checkBox {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  
+}
+.checkBox image {
+  width: 50rpx;
+  height: 45rpx;
+  margin-top: 10rpx;
+}
+.van-checkbox__label {
+  color: #FFFAB1 !important;
+  font-size: 26rpx;
+  margin-left: 6rpx !important;
+}
+
+
+
+
+.btnBox {
+  background-color: #2A2A35;
+  height: 120rpx;
+}
+.btn {
+  width: 480rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #D8B876;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.btn2 {
+  background-color: #BFBFBF;
+}

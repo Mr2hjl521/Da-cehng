@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-card": "../../miniprogram_npm/@vant/weapp/card/index",
+    "van-nav-bar": "../../miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-toast": "../../miniprogram_npm/@vant/weapp/toast/index",
+    "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "../../miniprogram_npm/@vant/weapp/cell-group/index",
+      "van-field": "../../miniprogram_npm/@vant/weapp/field/index"
+  },
+  "navigationBarTitleText": "确认订单",
+  "navigationBarTextStyle":"white",
+  "navigationBarBackgroundColor": "#fd4746",
+  "navigationStyle": "custom"
+}

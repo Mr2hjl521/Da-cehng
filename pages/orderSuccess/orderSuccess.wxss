@@ -1,0 +1,29 @@
+.topIcon {
+  width: 100%;
+  height: 600rpx;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 600rpx; 
+}
+.topIcon van-icon {
+  margin-top: 150rpx;
+}
+.ordertext {
+  width: 100%;
+  text-align: center;
+  height: 120rpx;
+  line-height: 100rpx
+}
+.orderCenter {
+  width: 240rpx;
+  height: 80rpx;
+  background-color: #f73f22;
+  color: white;
+  line-height:80rpx;
+}
+.van-nav-bar__text{
+  color:white !important;
+}
+/* .van-icon{
+  color:black !important;
+} */

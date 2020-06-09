@@ -1,0 +1,16 @@
+<!--输入手机号-->
+<view class="index"> 
+    <view class="phone">
+        <input  placeholder="请输入手机号"></input>
+    </view>
+<!--列表-->
+      <view class="list">
+          <input value="盐酥鸡数量"></input>
+      </view> 
+<!--底部按钮-->
+      <view class="buttonTap">
+        <button>参与接龙</button>
+      </view>
+</view>
+
+  

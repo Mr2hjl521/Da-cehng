@@ -1,0 +1,33 @@
+.box{
+  width: 100%;
+  height: 100%;
+}
+.header{
+  width: 80%;
+  height: 130rpx;
+  border-bottom: 1px solid #d9e2e9;
+  margin-left: 10%;
+  display: flex;
+  line-height: 150rpx;
+  text-align: center;
+}
+ .input-view{
+  margin-top: 24rpx !important;
+}
+ .image-view{
+  margin-left: 600% !important;
+}
+.van-cell{
+  margin-left: 53% !important;
+}  
+.button{
+  width:630rpx;
+  height:88rpx;
+  background:rgba(246,92,83,1);
+  border-radius:22px;
+  margin-top: 234rpx;
+  margin-left: 59rpx;
+  color: white;
+  text-align: center;
+  line-height: 88rpx;
+}

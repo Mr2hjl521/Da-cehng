@@ -1,0 +1,26 @@
+<view class="box">
+   <view class="boxone" wx:for="{{ list }}" wx:key="index" bindtap="addfire" data-index="{{index}}" data-id="{{item.id}}" data-oStyle="{{item.oStyle}}">
+          <view class="status">
+            <view class="addresskey">
+              订单编号:{{item.orderCode}}
+            </view>
+          </view>
+          <view class="boxlist" wx:for="{{item.productOpBos}}" wx:key="index">
+            <view class="boxlist_img">
+              <image src="{{item.imageUrl}}"></image>
+            </view>
+            <view class="boxlist_txt">
+              <view class="txt">{{item.name}}</view>
+
+              <view class="txt">¥{{item.specialPrice}}</view>
+            </view>
+            <view class="boxlist_num" style="margin-top:50rpx">
+               ×{{item.amount}}
+            </view>
+          </view>
+          <view class="operate">
+           <text class="icon-text" >实付:￥{{item.oSpecialPrice}}</text><text style="margin-left:50rpx">运费:{{item.courierFee}}</text>
+            <van-button custom-class="addbuttoner">设置运费</van-button>
+          </view>
+        </view>
+</view>

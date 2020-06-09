@@ -1,0 +1,14 @@
+<van-nav-bar
+  title="地址"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+<view class="bot">
+<view wx:for="{{defalutAddress}}" wx:key='id' data-id="{{item.id}}"  bindtap="makeAddres" data-name="{{item.userName}}" data-phone="{{item.phone}}" data-address="{{item.province}}{{item.city}}{{item.district}}{{item.address}}">
+    <view class="top">收货人:{{item.userName}}<label>{{item.phone}}</label></view>
+     <view class="address">收货地址:{{item.province}}{{item.city}}{{item.district}}{{item.address}}</view>
+</view>
+</view>
+<view class="bottom" bindtap="addAddress"> <button>添加收货地址</button></view>
+ 

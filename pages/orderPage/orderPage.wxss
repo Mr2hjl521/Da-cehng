@@ -1,0 +1,292 @@
+/* pages/orderPage.wxss */
+.apg {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 80rpx;
+}
+.topBtn {
+  width: 326rpx;
+  height: 60rpx;
+  line-height: 140rpx;
+  text-align: center;
+  display: flex;
+  margin-top: 40rpx;
+  margin-left: 214rpx;
+  box-sizing: border-box;
+  border: 1px red solid;
+  color: black;
+}
+.topBtn button{
+
+  flex: 1;
+  font-size: 25rpx;
+  text-align: center;
+  height: 100%;
+  line-height: 55rpx;
+  border-radius: 0;
+  box-sizing: border-box ;
+  border: 1rpx #fc4240 solid;
+}
+.nvg{
+  background: #fc4240;
+  color: white;
+}
+.van-nav-bar__text{
+  color:#fc4240 !important;
+}
+.van-icon{
+  color:white !important;
+}
+
+.van-nav-bar{
+background: #fc4240!important;
+}
+.addnvg{
+  color:red
+}
+.address {
+  width: 100%;
+  height: 180rpx;
+  margin-top: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  border-bottom:1px #ccc solid
+}
+.addComapny {
+  font-size: 22rpx;
+  font-weight: 700;
+}
+.addComapny label{
+  font-size: 20rpx;
+  color:  #868686
+}
+.addHome{
+  font-size: 24rpx;
+  color: #868686
+}
+.a {
+  height: 100%;
+  width: 100%;
+  float: left;
+  line-height: 180rpx;
+}
+.bLeft{
+  width: 580rpx;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  line-height: 80rpx;
+  font-size: 32rpx
+}
+.bLeft label {
+  float: right
+}
+.bRight {
+  width: 60rpx;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  font-size: 35rpx;
+  line-height: 80rpx;
+  text-align: center
+}
+.bRight button::after{
+  border:0
+}
+button-icon{
+  position: relative;
+  right: -10rpx;
+}
+.address2 {
+  width: 100%;
+  height: 180rpx;
+  margin-top: 20rpx;
+  border-bottom:1px solid #ccc;
+}
+.selectAddress {
+  font-size: 25rpx;
+  width: 280rpx;
+  float: left;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-weight: 700rpx;
+  margin-top: 60rpx;
+}
+.addImg {
+  font-size: 18rpx;
+  border: 3rpx #fc4240 solid;
+  width: 108rpx;
+  height: 34rpx;
+  color: #fc4240;
+  text-align: center;
+  line-height: 34rpx;
+  margin-top: 10rpx;
+  font-weight: 700
+}
+.alnTime {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.alnTime view:first-child{
+  font-size: 24rpx;
+  font-weight: 500;
+  display: inline-block;
+  float: left
+}
+.alnTime view:last-child{
+  font-size: 24rpx;
+  font-weight: 500;
+  display: inline-block;
+  float: right;
+}
+.goTime{
+  width: 100%;
+  height: 100rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+
+.goTime view{
+  
+}
+.goTime view label{
+  float: right
+}
+.allPrice {
+  width: 100%;
+  height: 220rpx;
+  font-size: 32rpx;
+  line-height: 80rpx;
+}
+.freight {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+  float: left;
+  margin-bottom: 10rpx;
+}
+.freight label {
+  float: right;
+  font-size: 28rpx;
+}
+.allPrice view label{
+  font-size: 22rpx;
+  float: right;
+}
+
+.remark {
+  height: 163rpx;
+  width: 100%;
+  margin-top: 15rpx;
+  overflow: hidden
+}
+.remark view{
+    float: left;
+    font-size: 32rpx;
+     height: 163rpx;
+    width: 160rpx;
+    display: inline-block;
+}
+.remark input{
+  float: left;
+  height: 50rpx;
+   font-size: 26rpx;
+  width: 500rpx;
+  display: inline-block;
+}
+.bot {
+  width: 100%;
+  bottom: 0rpx;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+}
+.bot view{
+  font-size: #f3f3f3;
+  line-height: 100rpx;
+  padding-left: 15rpx;
+}
+.money {
+  color: #fd4746;
+  margin-left: 40rpx;
+  box-sizing: border-box;
+}
+.bot button{
+  text-align: center;
+  width: 370rpx;
+  line-height: 100rpx;
+  background-color: #fd4746;
+  border-radius: 0;
+  color: white
+}
+
+/* 客服 */
+.serviceBox {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: rgba(150, 150, 150, 0.7);
+  position: fixed;
+  right: 20rpx;
+  bottom: 80rpx;
+  z-index: 91;
+}
+.serviceBox image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 10rpx;
+}
+.viee{
+  float:left;
+  width: 300px;
+  height: 60rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.xbottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  z-index: 20;
+  background-color: white
+}
+.xbottom view {
+  flex: 1
+}
+.xbottom view:first-child{
+  margin-left: 40rpx;
+  line-height: 90rpx
+}
+.xbottom view:first-child label {
+  margin-left: 35rpx;
+  color: red
+}
+.xbottom view:last-child{
+  color: white;
+  text-align: center;
+  line-height: 90rpx;
+}
+.xbottom view:last-child button{
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border-radius: 0
+}
+
+.xorderList {
+  padding: 0 20rpx;
+}
+
+.x {
+  margin-left: 375rpx;
+}
+.y {
+  margin-left: 20rpx;
+}

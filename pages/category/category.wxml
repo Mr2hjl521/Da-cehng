@@ -1,0 +1,38 @@
+<!--分类.wxml-->
+<view class="containerBox" wx:if="{{identity!=2}}">
+	<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:focus="addfocus" shape="round" custom-class="searchBox" />
+	<view class="categoryBox">
+		<!-- 左侧导航 -->
+		<view class="left" style="height: {{ windowHeight }}px">
+			<van-sidebar active-key="{{ activeKey }}" bind:change="onChange" custom-class="sidebar">
+				<view wx:for="{{ categoryList }}" wx:key="index">
+					<van-sidebar-item title="{{ item.name }}" />
+				</view>
+			</van-sidebar>
+		</view>
+		<!-- 右侧 -->
+		<view class="right">
+      <view class="cateboryContent">
+        <view class="goodsBox"  wx:for="{{ goodsList }}" wx:key="id" bindtap="toDetails" data-id='{{ item.id }}'>
+					<view class="goodsLeft">
+						<image src='{{ item.imageUrl }}'></image>
+					</view>
+					<view class="goodsRight" id="{{ item.id }}">
+						<view class="goodsTitle">{{ item.name }}</view>
+						<view class="goodsDes"></view>
+        <view class="goodsPrice" wx:if="{{identity==0}}">¥{{item.price}}</view>
+         <view class="goodsPrice" wx:if="{{identity==1}}">¥{{item.specialPrice}}<label class="delGoodsPrice">¥{{item.price}}</label></view>
+					</view>
+				</view>
+        <view></view>
+      </view>
+    </view>
+		
+	</view>
+  <van-popup show="{{ getuserkey }}" bind:close="onClose">
+    <view class="title2">提示</view>
+    <view class="btn_txt">查看商品需要进行用户授权，是否授权</view>
+    <button class="btn_spy_one btn_spy" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">确认</button>
+    <button class="btn_spy_two btn_spy" bindtap="giveup">取消</button>
+  </van-popup>
+</view>

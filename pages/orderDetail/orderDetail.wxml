@@ -1,0 +1,114 @@
+<view class="title" wx:if="{{addtype!=1&&addtype!=2}}" style="font-size:36rpx;position:relative;font-weight: bold">
+  {{orderDetail.newstatus}}
+ <view style="font-size:24rpx;position:absolute;top:60rpx;left:0rpx;">订单{{orderDetail.newstatus}}</view>
+  <van-button color="#000000" plain size="small" round type="info" data-id='{{orderDetail.id}}' catchtap="refuse" style="margin:0 0 100rpx 30%" size="small" wx:if="{{orderDetail.oStatus != 5 && orderDetail.oStatus != 7}}" custom-class="addbutton">取消订单</van-button>
+  <van-button color="#000000" plain size="small" round type="info" data-id='{{orderDetail.id}}' catchtap="sure" style="margin:0 0 0 5%" size="small" wx:if="{{orderDetail.oStatus == 6}}" custom-class="addbuttoner" >确认下单</van-button>
+  <van-button color="#000000" plain size="small" round type="info" data-id='{{orderDetail.id}}' catchtap="delivery" style="margin:0 0 0 5%" size="small" wx:if="{{orderDetail.oStatus == 1}}" custom-class="addbuttoner">确认收货</van-button>
+  <van-button color="#000000" plain size="small" round type="info" data-id='{{orderDetail.id}}' catchtap="myself" style="margin:0 0 0 5%" size="small" wx:if="{{orderDetail.oStatus == 2}}" custom-class="addbuttoner">已自提</van-button>
+</view>
+<view class="typeone">
+  <view class="txt"  wx:if="{{orderDetail.oType == 1}}">
+    自提点:{{orderDetail.aAddress}}
+  </view>
+ <van-button  round data-id='{{orderDetail}}' catchtap="myselfA" wx:if="{{orderDetail.oType == 1 && addtype!=1}}" custom-class="addbuttonerA">联系门店</van-button>
+</view>
+
+<view class="typetwo"  wx:if="{{orderDetail.oType == 0}}">
+  <view class="txt">
+    收货人:{{orderDetail.uhAddress.userName}} <text style="float:right">{{orderDetail.uhAddress.phone}}</text>
+  </view>
+  <view class="txt1">
+  <label class="a">收货地址:</label>
+  <label class="b">{{orderDetail.uhAddress.address}}</label>
+  </view>
+</view>
+
+<view class="box">
+<view class="icon-er" >
+     <text>店铺名称</text>
+     <text style="float:right">{{orderDetail.aShopName}}</text>
+  </view>
+  <view class="icon-er" wx:if="{{orderDetail.oType == 0}}">
+     <text>送货时间</text>
+     <text style="float:right">{{orderDetail.adeliveryTime}}</text>
+  </view>
+  <view class="icon-er" wx:if="{{orderDetail.oType == 0}}">
+     <text>配送范围</text>
+     <text style="float:right" style="float:right;width:400rpx;overflow:hidden;height:50rpx">{{orderDetail.range}}</text>
+  </view>
+  <view class="time" wx:if="{{orderDetail.oType == 1}}">
+    自提时间:{{orderDetail.pickupTime}}
+  </view>
+  <view class="boxlist" wx:for="{{orderDetail.productOpBos}}" wx:key="index">
+    <view class="boxlist_img">
+      <image src="{{item.imageUrl}}"></image>
+    </view>
+    <view class="boxlist_txt">
+      <view class="txta">{{item.name}}</view>
+
+      <view class="txta">¥{{item.specialPrice}}</view>
+    </view>
+    <view class="boxlist_num">
+      共{{item.amount}}件
+    </view>
+  </view>
+  <view class="message">
+    <view class="left">商品金额</view>
+    <view class="right special" style="left:400rpx;font-size:28rpx"><text style="text-decoration:line-through;font-size:25rpx">¥{{orderDetail.oPrice}}</text > ¥{{orderDetail.oSpecialPrice}}</view>
+  </view>
+  <view class="message" wx:if="{{orderDetail.oType == 0&&addtype!=1}}">
+    <view class="left">运费</view>
+    <view class="right special" style="font-size:25rpx;color:red;left:436rpx">{{orderDetail.courierFee}}</view>
+  </view>
+  <!-- 商户的设置运费 -->
+    <van-cell-group  wx:if="{{addtype==1 && orderDetail.oType==0}}" input-class="addbuttoner" >
+      <van-field
+        value="{{ orderList.courierFee }}"
+        label="运费"
+        placeholder="请输入运费"
+        bind:change="onChangeA"
+      />  
+    </van-cell-group> 
+<view class="message" wx:if="{{orderDetail.oType == 0}}">
+    <view class="left">合计</view>
+    <view class="right special" class="{{orderDetail.totalPrices == null ? 'right special nullWhite' : 'right special'}}" style="margin-left:-66rpx">{{orderDetail.totalPrices}}</view>
+  </view>
+  <!-- <view class="message" wx:if="{{orderDetail.oType == 0}}">
+    <view class="left">合计</view>
+    <view class="right special" style="margin-left:-66rpx">¥{{orderDetail.totalPrices}}</view>
+  </view> -->
+
+  <view class="message" wx:if="{{orderDetail.oType != 1}}"> 
+    <view class="left">卖家联系方式</view>
+    <view class="right special" style="margin-left:-108rpx">{{orderDetail.agentPhone}}</view>
+  </view>
+   <view class="message" wx:if="{{orderDetail.oType == 1}}">
+    <view class="left" >买家联系方式</view>
+    <view class="right special" style="margin-left:-108rpx">{{orderDetail.uPhone}}</view>
+  </view>
+  
+  <view class="specialmessage">
+     <text>买家留言</text>
+     <text style="margin-left:60rpx">{{orderDetail.leaveMessage}}</text>
+  </view>
+  <view class="message">
+    <view class="left">订单编号</view>
+    <view class="right">{{orderDetail.orderCode}}</view>
+  </view>
+  <view class="message" wx:if="{{orderDetail.oType == 0}}">
+    <view class="left">送货时间</view>
+    <view class="right">{{orderDetail.adeliveryTime}}</view>
+  </view>
+
+  <view class="message" wx:if="{{orderDetail.oType == 1}}">
+    <view class="left">自提时间</view>
+    <view class="right">{{orderDetail.adeliveryTime}}</view>
+  </view>
+  <view class="message">
+    <view class="left">订单生成时间</view>
+    <view class="right">{{orderDetail.createTime}}</view>
+  </view>
+  <van-button custom-class="addbuttoner"  wx:if="{{addtype==1 && orderDetail.oType==0}}" catchtap="setrefuse">设置运费</van-button>
+  <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
+</view> 

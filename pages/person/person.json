@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-checkbox": "../../miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index",
+    "van-nav-bar": "../../miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-image": "../../miniprogram_npm/@vant/weapp/image/index"
+  },
+  "navigationStyle": "custom"
+}

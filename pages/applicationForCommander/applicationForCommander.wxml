@@ -1,0 +1,15 @@
+<!--申请成为合伙人.wxml-->
+<view class="containerBox">
+  <image src="https://trd.dachan.com.cn/dacheng/resource/image/a/a/2020/03/06/c5359eb0974a3685378c94dd39ab2aa.png" class="img" mode="widthFix"></image>
+  <view class="checkBox"wx:if="{{ isHead!==2 }}">
+    <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
+      我已阅读《合伙人入住协议》
+      <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" />
+    </van-checkbox>
+  </view>
+  <view class="btnBox">
+    <view class="btn" wx:if="{{ checked==true&&isHead!==2 }}" bindtap="submit">提交合伙人申请</view>
+    <view class="btn btn2" wx:if="{{ checked==false&&isHead!==2 }}">提交合伙人申请</view>
+    <view class="btn btn2" wx:if="{{ isHead==2 }}">已提交申请</view>
+  </view>
+</view>
